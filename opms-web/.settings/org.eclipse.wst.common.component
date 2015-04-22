@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="opms-web">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="opms-entity-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/opms-entity/opms-entity">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opms-pulgins-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/opms-pulgins/opms-pulgins">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opms-service-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/opms-service/opms-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opms-mapper-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/opms-mapper/opms-mapper">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opms-utils-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/opms-utils/opms-utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="opms-security-2.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/opms-security/opms-security">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/opms-web/target/classes"/>
+        <property name="context-root" value="opms-web"/>
+    </wb-module>
+</project-modules>
