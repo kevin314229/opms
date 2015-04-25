@@ -11,7 +11,7 @@
 	var dialog;
 	var grid;
 	$(function() {
-		grid = window.opms.ui.lyGrid({
+		grid = window.opms.ui.grid({
 					id : 'paging',
 					l_column : [ {
 						colkey : "id",
@@ -38,19 +38,19 @@
 					jsonUrl : '${pageContext.request.contextPath}/background/account/query.html',
 					checkbox : true
 				});
-		$("#seach").click("click", function() {//绑定查询按扭
+		$("#seach").click("click", function() {//绑定按扭
 			var searchParams = $("#fenye").serializeJson();
 			grid.setOptions({
 				data : searchParams
 			}); 
 		});
-		$("#exportExcel").click("click", function() {//绑定查询按扭
+		$("#exportExcel").click("click", function() {//绑定按扭
 			var f = $('#fenye');
 			f.attr('target','_blank');
 			f.attr('action','${pageContext.request.contextPath}/background/account/exportExcel.html');
 			f.submit();
 		});
-		$("#add").click("click", function() {//绑定查询按扭
+		$("#add").click("click", function() {//绑定按扭
 			dialog = parent.$.ligerDialog.open({
 				width : 300,
 				height : 310,
@@ -59,7 +59,7 @@
 				isHidden:false   //关闭对话框时是否只是隐藏，还是销毁对话框
 			});
 		});
-		$("#editView").click("click", function() {//绑定查询按扭
+		$("#editView").click("click", function() {//绑定按扭
 			var cbox=grid.getSelectedCheckbox();
 			if (cbox.length > 1||cbox=="") {
 				parent.$.ligerDialog.alert("只能选中一个");
@@ -73,7 +73,7 @@
 				isHidden : false
 			});
 		});
-		$("#perrole").click("click", function() {//绑定查询按扭
+		$("#perrole").click("click", function() {//绑定按扭
 			var cbox=grid.selectRow();
 			if (cbox.id == undefined || cbox.id=="") {
 				parent.$.ligerDialog.alert("请选择一条数据!");
@@ -87,7 +87,7 @@
 				isHidden : false
 			});
 		});
-		$("#deleteView").click("click", function() {//绑定查询按扭
+		$("#deleteView").click("click", function() {//绑定按扭
 			var cbox=grid.getSelectedCheckbox();
 			if (cbox=="") {
 				parent.$.ligerDialog.alert("请选择删除项！！");

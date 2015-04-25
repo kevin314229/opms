@@ -135,8 +135,8 @@
 		FROM resources WHERE id in(
 		SELECT resc_id FROM
 		res_roles WHERE role_id in(
-		SELECT role_id FROM acc_role
-		WHERE acc_id=#{id}))
+		SELECT role_id FROM account_role
+		WHERE account_id=#{id}))
 		order By level asc
 	</select>
 	<!-- 删 -->

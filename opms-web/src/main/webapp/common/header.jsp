@@ -13,14 +13,18 @@
 <META HTTP-EQUIV="Expires" CONTENT="0"> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${ctx}/css/basic.css" />
-<link href="${ctx}/ligerUI/skins/koala/css/style-all.css" rel="stylesheet" type="text/css" />  
- <script src="${ctx}/js/jquery-1.8.3.js"></script>
-<script type="text/javascript" src="${ctx}/js/jquery.form.js"></script>
-<script type="text/javascript" src="${ctx}/js/jquery-validation/jquery.validate.min.js"></script>
-<script type="text/javascript" src="${ctx}/js/jquery-validation/messages_cn.js"></script>
-<script type="text/javascript" src="${ctx}/ligerUI/js/ligerui.min.js"></script>
-<script type="text/javascript" src="${ctx}/ligerUI/js/plugins/ligerDialog.js"></script>
- <script src="${ctx}/js/lyGrid.js" type="text/javascript"></script>
+<link href="${ctx}/jslib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />  
+ <script src="${ctx}/jslib/jquery/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="${ctx}/jslib/jquery.form.js"></script>
+<script type="text/javascript" src="${ctx}/jslib/jquery-validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${ctx}/jslib/jquery-validation/messages_cn.js"></script>
+<script type="text/javascript" src="${ctx}/jslib/ligerUI/js/ligerui.min.js"></script>
+<script type="text/javascript" src="${ctx}/jslib/ligerUI/js/plugins/ligerDialog.js"></script>
+    <%-- <script type="text/javascript" src="${ctx}/jslib/ligerUI/js/core/base.js"></script>
+    <script type="text/javascript" src="${ctx}/jslib/ligerUI/js/plugins/ligerGrid.js"></script>
+    <script type="text/javascript" src="${ctx}/jslib/ligerUI/js/plugins/ligerTab.js"></script>
+    <script type="text/javascript" src="${ctx}/jslib/ligerUI/js/plugins/ligerDrag.js"></script> --%>
+ <script src="${ctx}/jslib/grid.js" type="text/javascript"></script>
 <link href="${ctx}/css/opms.css" rel="stylesheet">
 <script type="text/javascript">
 var rootPath = "${ctx}";

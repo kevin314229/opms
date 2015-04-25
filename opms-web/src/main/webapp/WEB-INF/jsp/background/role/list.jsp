@@ -11,7 +11,7 @@
 	var dialog;
 	var grid;
 	$(function() {
-		grid = window.opms.ui.lyGrid({
+		grid = window.opms.ui.grid({
 					id : 'paging',
 					l_column : [ {
 						colkey : "id",

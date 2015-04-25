@@ -21,30 +21,22 @@ a:link,a:visited {
 }
 /*菜单个性设置*/
 .box {
-	width: 90%;
 	height: 100%;
-	margin: 0 auto;
-	height: 100%;
+	position: relative;
+	text-align: center;
+	overflow: auto;
 }
 
 .box ul {
 	list-style: none;
-	text-align: left;
 }
 
-.box h2 {
-	margin: 0 auto;
+.menu_header {
 	height: 26px;
-	background: #000
+	color: #000;
+	background: 
 		url(${pageContext.request.contextPath}/images/left-head.jpg)
-		no-repeat left top;
-	text-indent: 1px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 30px;
-	_line-height: 33px;
-	color: #3d3d3d;
-	font-weight: normal;
+		no-repeat center top;
 }
 /*一级菜单*/
 .menu li.level1 a {
@@ -53,29 +45,26 @@ a:link,a:visited {
 	text-align: center;
 	height: 29px;
 	font-size: 12px;
-	color: #000;
 	background:
 		url(${pageContext.request.contextPath}/images/menubg.jpg)
-		no-repeat left top;
+		no-repeat center top;
 }
 /*一级菜单两种样式，供JS调用*/
 .menu li.level1 a.hove {
-	background-position: left -29px;
+	background-position: center;
 	color: #fff;
 }
-
 .menu li.level1 a.cur {
-	background-position: left -58px;
+	background-position: center;
 	color: #fff;
 }
 /*二级菜单*/
 .menu li ul {
-	padding-left: 3px;
 	overflow: hidden;
 }
 
 .menu li ul.level2 {
-	width: 200px;
+	width: auto;
 	display: none;
 }
 
@@ -88,22 +77,17 @@ a:link,a:visited {
 	display: block;
 	height: 26px;
 	line-height: 26px;
-	background-image: url(); no-repeat 30px center;
-	text-align: center;
+	background: url() no-repeat center top;
 	color: #42556B;
 	border-buttom: 1px #B8C2CB solid;
 	overflow: hidden;
 }
 /*二级菜单两态样式，供JS调用*/
-.menu li ul.level2 li a.hove1 {
+.menu li ul.level2 li:HOVER {
 	background: #82aedd
 		url(${pageContext.request.contextPath}/images/t2.gif) no-repeat
 		30px center;
 	color: #000;
-}
-ul, ol {
-    margin: 0;
-    padding: 0;
 }
 </style>
 <script language="javascript" type="text/javascript">
@@ -280,7 +264,7 @@ ul, ol {
 <body>
 	<!--把下面代码加到<body>与</body>之间-->
 	<div class="box">
-		<h2></h2>
+		<div class="menu_header"></div>
 		<ul class="menu" id="menu">
 		</ul>
 	</div>

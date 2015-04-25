@@ -11,7 +11,7 @@
 	var dialog;
 	var grid;
 	$(function() {
-		grid = window.opms.ui.lyGrid({
+		grid = window.opms.ui.grid({
 			id : 'paging',
 			l_column : [ {
 				colkey : "id",
@@ -57,11 +57,11 @@
 				data : data.join("&")
 			});
 		});
-		$("#lyGridUp").click("click", function() {//上移
-			grid.lyGridUp();
+		$("#gridUp").click("click", function() {//上移
+			grid.gridUp();
 		});
-		$("#lyGridDown").click("click", function() {//下移
-			grid.lyGridDown();
+		$("#gridDown").click("click", function() {//下移
+			grid.gridDown();
 		});
 		$("#seach").click("click", function() {//绑定查询按扭
 			var searchParams = $("#fenye").serializeJson();
@@ -180,10 +180,10 @@
 			</a> <a class="btn btn-danger" href="javascript:void(0)" id="deleteView">
 				<i class="icon-trash icon-white"></i> Delete
 			</a>
-			<a class="btn btn-large btn-success" href="javascript:void(0)" id="lyGridUp">
+			<a class="btn btn-large btn-success" href="javascript:void(0)" id="gridUp">
 				上移
 			</a>
-			<a class="btn btn-large btn-success" href="javascript:void(0)" id="lyGridDown">
+			<a class="btn btn-large btn-success" href="javascript:void(0)" id="gridDown">
 				下移
 			</a>
 			<a class="btn btn-large btn-success" href="javascript:void(0)" id="rowline">

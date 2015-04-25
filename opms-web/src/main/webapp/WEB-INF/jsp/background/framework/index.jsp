@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -7,51 +6,40 @@
 			+ path + "/";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <%@ include file="/common/header.jsp"%>
 <script type="text/javascript">
-	var tab;
-	function addTabEvent(tabid, text, url) {
-		tab.removeTabItem(tabid);
-		tab.addTabItem({
-			tabid : tabid,
-			text : text,
-			url : url
-		});
-		tab.reload(tabid);
-	}
-	function divsize() {
-		var h = document.getElementById("bom").offsetTop;
-		$(".cl_body").css("height", h - 32);
-		$(".l_body").css("height", h - 38);
-	}
-
+	var tab = null;
+	var tree = null;
 	var grid;
+	var openMainPage = false;
 	$(function() {
 		var h = document.getElementById("bom").offsetTop;
-		$(".cl_body").css("height", h - 38);
+		$("#myHomePage").css("height", h - 38);
 		$(".leftTree").css("height", h - 40);
-
 		$(".leaf .leaf_body").css("height", h / 2 - 24 - 38);
-		$(".l_flow-btn").toggle(function() {
-			$(".l_container .container").slideUp(500);
-			$(".l_container .leafSet").slideDown(500);
-			//$(".l_body").css("background","none repeat scroll 0 0 #FAFAFA");
-		}, function() {
-
-			$(".l_container .container").slideDown(500);
-			$(".l_container .leafSet").slideUp(500);
+		$("#flow-btn").click(function() {
+			if (openMainPage) {
+				$("#container").slideDown(500);
+				$("#myHomePage").slideUp(500);
+				openMainPage = false;
+			} else {
+				$("#container").slideUp(500);
+				$("#myHomePage").slideDown(500);
+				openMainPage = true;
+			}
 		});
-
-		tab = $("#framecenter").ligerTab({
-			height : h - 40
+		$("#frameCenter").ligerTab({
+			height : '100%',
+			changeHeightOnResize: true,
 		});
+		tab = $("#frameCenter").ligerGetTabManager();
+
 		$
 				.ajax({
 					async : false, //请勿改成异步，下面有些程序依赖此请数据
 					type : "POST",
-					//data : $("#from").serialize(),
 					url : '${ctx}/background/resources/resources.html?id='
 							+
 <%=request.getSession().getAttribute("userSessionId")
@@ -67,7 +55,6 @@
 								.each(
 										data,
 										function(i) {
-
 											li += '<li class="level1"><a href="javascript:void(0)">'
 													+ data[i].name + '</a>';
 											li += '<ul class="level2" id="level2_'+i+'">';
@@ -85,7 +72,7 @@
 						ul.html(li);
 					}
 				});
-		//  $("#framecenter").ligerGetTabManager();
+
 		$('a[id^="level2_"]').unbind('click').bind('click', function(e) {
 			var sid = this.id;
 			sid = sid.substring(sid.indexOf("level2_") + 7, sid.length);
@@ -95,6 +82,20 @@
 			return false;
 		});
 	});
+
+	function addTabEvent(tabid, text, url) {
+		tab.removeTabItem(tabid);
+		tab.addTabItem({
+			tabid : tabid,
+			text : text,
+			url : url
+		});
+	}
+
+	function divsize() {
+		var h = document.getElementById("bom").offsetTop;
+		$("#myHomePage").css("height", h - 32);
+	}
 </script>
 <style type="text/css">
 .leaf .leaf_body {
@@ -214,10 +215,6 @@
 	background: url("${ctx}/images/img03.jpg");
 }
 
-#lta table td {
-	border: solid 1px #000000;
-	padding: 10px;
-}
 </style>
 <script type="text/javascript">
 	$(document).ready(
@@ -259,129 +256,155 @@
 		return null;
 	}
 </script>
+<!-- **********************************时钟显示开始********************************** -->
+<style type="text/css">
+#ClockDate {
+	margin: 30px;
+	padding: 10px 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	text-shadow: 0 0 5px #00c6ff;
+}
+
+#ClockTime {
+	margin: 30px;
+	width: auto;
+}
+
+#ClockTime span {
+	font-size: 36px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-shadow: 0 0 5px #00c6ff;
+}
+
+#point {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+</style>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				var monthNames = [ "January", "February", "March", "April",
+						"May", "June", "July", "August", "September",
+						"October", "November", "December" ];
+				var dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday",
+						"Thursday", "Friday", "Saturday" ]
+				var newDate = new Date();
+				newDate.setDate(newDate.getDate());
+				$('#ClockDate').html(
+						dayNames[newDate.getDay()] + " " + newDate.getDate()
+								+ ' ' + monthNames[newDate.getMonth()] + ' '
+								+ newDate.getFullYear());
+				setInterval(function() {
+					var seconds = new Date().getSeconds();
+					$("#sec").html((seconds < 10 ? "0" : "") + seconds);
+				}, 1000);
+
+				setInterval(function() {
+					var minutes = new Date().getMinutes();
+					$("#min").html((minutes < 10 ? "0" : "") + minutes);
+				}, 1000);
+
+				setInterval(function() {
+					var hours = new Date().getHours();
+					$("#hours").html((hours < 10 ? "0" : "") + hours);
+				}, 1000);
+
+			});
+</script>
+<!-- **********************************时钟显示结束********************************** -->
 </head>
 
 <body onresize="divsize();">
 
-	<div class="l_header" id="l_header">
-		<span class="l_flow-btn" style="z-index: 0">主页</span>
+	<div class="header" id="header">
+		<span id="flow-btn" style="z-index: 0">主页</span>
 	</div>
 
 
-	<div class="l_body">
-		<div class="l_container">
-
-			<div class="container">
-
-				<div id="part1" class="leaf one">
-					<div class="leaf_body">
-						<div class="skin">
-							<div
-								style="font-size: 20px; text-align: left; font-weight: 800; padding: 10px; color: red;">
-								猛击左上角的主页!</div>
-
-							<!-- <div
-								style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; WIDTH: 100%; HEIGHT: 148px; border: 1px solid #cacaca; background: #FFFFFF">
-								<div
-									style="WIDTH: 100%; clear: both; height: 31px; background-image: url(http://www.tianqi.com/static/images/code/bg_13.jpg); background-repeat: repeat-x; border-bottom: 1px solid #cacaca;">
-									<div
-										style="float: left; height: 31px; color: #9e0905; font-weight: bold; line-height: 31px; margin-left: 20px; font-size: 14px;">城市天气预报</div>
-
-								</div>
-								<iframe width="400" scrolling="no" height="120" frameborder="0"
-									allowtransparency="true"
-									src="http://i.tianqi.com/index.php?c=code&id=19&bgc=%23FFFFFF&bdc=%23&icon=1&temp=1&num=2"></iframe>
-							</div> -->
-						</div>
-					</div>
-				</div>
-
-				<div id="part2" class="leaf one">
-					<div class="leaf_body">
-
-						<div class="skin">
-							<table>
-								<tr>
-									<td width="80px" valign="top" style="padding-top: 10px;">更换背景：</td>
-									<td><ul class="skin_list">
-											<li><span class="red"></span>&nbsp;红色&nbsp;</li>
-											<li><span class="black"></span>&nbsp;黑色&nbsp;</li>
-											<li><span class="white"></span>&nbsp;白色&nbsp;</li>
-											<li><span class="gray"></span>&nbsp;灰色&nbsp;</li>
-											<li><span class="yellow"></span>&nbsp;黄色&nbsp;</li>
-											<li><span class="orange"></span>&nbsp;橙色&nbsp;</li>
-											<li><span class="pink"></span>&nbsp;粉色&nbsp;</li>
-											<li><span class="light_purple"></span>&nbsp;浅紫&nbsp;</li>
-											<li><span class="dark_purple"></span>&nbsp;深紫&nbsp;</li>
-											<li><span class="shen_blue"></span>&nbsp;深蓝&nbsp;</li>
-											<li><span class="blue"></span>&nbsp;蓝色&nbsp;</li>
-											<li><span class="dark_blue"></span>&nbsp;暗蓝&nbsp;</li>
-											<li><span class="light_green"></span>&nbsp;浅绿&nbsp;</li>
-											<li><span class="dark_green"></span>&nbsp;深绿&nbsp;</li>
-										</ul></td>
-								</tr>
-								<tr>
-									<td width="80px" valign="top" style="padding-top: 10px;">背景图片：</td>
-									<td><ul class="skin_list">
-											<li><span class="img02"
-												style="width: 100px; height: 100px;"></span>&nbsp;</li>
-											<li><span class="img03"
-												style="width: 100px; height: 100px;"></span>&nbsp;</li>
-											<li><span class="img01"
-												style="width: 100px; height: 100px;"></span></li>
-										</ul></td>
-								</tr>
-							</table>
-
-						</div>
-
-					</div>
-				</div>
-				<div id="part3" class="leaf one">
-					<div class="leaf_body">
-						<div class="skin">
-							<div style="font-size: 14px; text-align: left; padding: 10px;">
-								公告栏：<br> 1、这里写介绍说明
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="part4" class="leaf one">
-					<div class="leaf_body">
-						<div class="skin">备用</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="leafSet" style="display: none;">
-				<div class="cl_body"
-					style="background: none repeat scroll 0 0 #FAFAFA; overflow: auto;">
-					<div id="divHeght">
-						<div class="leftTree">
-							<jsp:include page="/menu.jsp"></jsp:include>
-						</div>
-						<div style="float: right; width: 83%;" id="framecenter">
-							<div class="box-content" tabid="home" title="我的主页">
-								<div class="topBtn" style="padding-left: 20px;">
-									<div style="font-size: 14px; color: red;" id="lta">
-										<!-- <a id="lurl" style="color: blue;">点击此处下载！</a> <script
-															type="text/javascript">
-														var h = location.href;
-														h = h
-																.substring(
-																		0,
-																		h
-																				.lastIndexOf("/"));
-														h += "/download.html?fileName=opms-2.0.rar";
-														$("#lurl").attr("href",
-																h);
-													</script> -->
+	<div id="index_body">
+		<div id="container">
+			<table>
+				<tr>
+					<td><div id="part1" class="leaf">
+							<div class="leaf_body">
+								<div class="skin">
+									<div>
+										<!-- 时钟显示 -->
+										<div id="ClockDate"></div>
+										<div id="ClockTime">
+											<span id="hours"></span> <span id="point">:</span> <span id="min"></span> <span id="point">:</span> <span id="sec"></span>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						</div></td>
+					<td><div id="part2" class="leaf">
+							<div class="leaf_body">
+
+								<div class="skin">
+									<table>
+										<tr>
+											<td width="80px" valign="top" style="padding-top: 10px;">更换背景：</td>
+											<td><ul class="skin_list">
+													<li><span class="red"></span>&nbsp;红色&nbsp;</li>
+													<li><span class="black"></span>&nbsp;黑色&nbsp;</li>
+													<li><span class="white"></span>&nbsp;白色&nbsp;</li>
+													<li><span class="gray"></span>&nbsp;灰色&nbsp;</li>
+													<li><span class="yellow"></span>&nbsp;黄色&nbsp;</li>
+													<li><span class="orange"></span>&nbsp;橙色&nbsp;</li>
+													<li><span class="pink"></span>&nbsp;粉色&nbsp;</li>
+													<li><span class="light_purple"></span>&nbsp;浅紫&nbsp;</li>
+													<li><span class="dark_purple"></span>&nbsp;深紫&nbsp;</li>
+													<li><span class="shen_blue"></span>&nbsp;深蓝&nbsp;</li>
+													<li><span class="blue"></span>&nbsp;蓝色&nbsp;</li>
+													<li><span class="dark_blue"></span>&nbsp;暗蓝&nbsp;</li>
+													<li><span class="light_green"></span>&nbsp;浅绿&nbsp;</li>
+													<li><span class="dark_green"></span>&nbsp;深绿&nbsp;</li>
+												</ul></td>
+										</tr>
+										<tr>
+											<td width="80px" valign="top" style="padding-top: 10px;">背景图片：</td>
+											<td><ul class="skin_list">
+													<li><span class="img02" style="width: 100px; height: 100px;"></span>&nbsp;</li>
+													<li><span class="img03" style="width: 100px; height: 100px;"></span>&nbsp;</li>
+													<li><span class="img01" style="width: 100px; height: 100px;"></span></li>
+												</ul></td>
+										</tr>
+									</table>
+
+								</div>
+
+							</div>
+						</div></td>
+				</tr>
+				<tr>
+					<td><div id="part3" class="leaf">
+							<div class="leaf_body">
+								<div class="skin">
+									<div style="font-size: 14px; text-align: left; padding: 10px;">
+										公告栏：<br> 1、这里写介绍说明
+									</div>
+								</div>
+							</div>
+						</div></td>
+					<td><div id="part4" class="leaf">
+							<div class="leaf_body">
+								<div class="skin">备用</div>
+							</div>
+						</div></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="myHomePage">
+			<div class="leftTree">
+				<jsp:include page="/menu.jsp"></jsp:include>
+			</div>
+			<div id="frameCenter">
+				<div class="box-content" title="我的主页">
+					<div style="font-size: 14px; color: red;" id="lta">欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页</div>
 				</div>
 			</div>
 		</div>

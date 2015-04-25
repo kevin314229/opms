@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 所有的Mapper继承这个接口 已经实现民基本的 增,删,改,查接口,不需要重复写
+ * 所有的Mapper继承这个接口 已经实现了基本的 增,删,改,查接口,不需要重复写
  * 
  * @version 1.0v
  */

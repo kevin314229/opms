@@ -9,7 +9,7 @@
 <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
 <META HTTP-EQUIV="Expires" CONTENT="0"> 
 <link href="${pageContext.servletContext.contextPath }/css/opms.css" rel="stylesheet">
- <script src="${pageContext.servletContext.contextPath }/js/jquery-1.8.3.js"></script>
+ <script src="${pageContext.servletContext.contextPath }/jslib/jquery/jquery-1.11.2.js"></script>
 <script language="JavaScript" src="${pageContext.servletContext.contextPath }/FusionCharts/FusionCharts.js"></script>
 <style type="text/css">
 body{

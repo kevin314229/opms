@@ -105,7 +105,7 @@ public class AccountController extends BaseController {
 		model.addAttribute("accountName", accountName);
 		model.addAttribute("roleName", roleName);
 
-		return Common.BACKGROUND_PATH + "/account/acc_role";
+		return Common.BACKGROUND_PATH + "/account/account_role";
 	}
 
 	/**

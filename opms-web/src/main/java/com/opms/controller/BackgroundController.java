@@ -4,7 +4,6 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,8 +13,6 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -149,6 +146,7 @@ public class BackgroundController {
 	 * @param request
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@RequestMapping("findAuthority")
 	@ResponseBody
 	public List<String> findAuthority(HttpServletRequest request) {
@@ -156,9 +154,7 @@ public class BackgroundController {
 		List<GrantedAuthority> authorities = (List<GrantedAuthority>) securityContextImpl.getAuthentication().getAuthorities();
 		List<String> strings = new ArrayList<String>();
 		for (GrantedAuthority grantedAuthority : authorities) {
-
 			strings.add(grantedAuthority.getAuthority());
-
 		}
 		return strings;
 	}
@@ -207,44 +203,6 @@ public class BackgroundController {
 			if (bos != null) {
 				bos.close();
 			}
-		}
-	}
-
-	@ResponseBody
-	@RequestMapping("getModules")
-	public void getModules(HttpServletResponse response) {
-		Module module = new Module();
-		List l = new ArrayList();
-		l.add("a");
-		l.add("b");
-		l.add("c");
-		l.add("d");
-		l.add("e");
-		List m = new ArrayList();
-		l.add("1");
-		l.add("2");
-		l.add("3");
-		l.add("4");
-		l.add("5");
-		JSONObject jsonObject = new JSONObject();
-		module.setModules(m);
-		module.setPmodules(l);
-		jsonObject.put("module", module);
-		doJsonResponse(response, jsonObject);
-	}
-
-	/**
-	 * 返回json格式的数据
-	 * 
-	 * @param response
-	 * @param jsonObject
-	 */
-	protected void doJsonResponse(HttpServletResponse response, final JSONObject jsonObject) {
-		response.setCharacterEncoding("UTF-8");
-		try {
-			response.getWriter().print(jsonObject);
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 }

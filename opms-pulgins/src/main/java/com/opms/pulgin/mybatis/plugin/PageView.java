@@ -3,7 +3,7 @@ package com.opms.pulgin.mybatis.plugin;
 import java.util.List;
 
 /**
- * //分页封装函数
+ * 分页封装函数
  * 
  * @param <T>
  */
@@ -11,7 +11,7 @@ public class PageView {
 	/**
 	 * 分页数据
 	 */
-	private List records;
+	private List<?> records;
 
 	/**
 	 * 总页数 这个数是计算出来的
@@ -97,7 +97,7 @@ public class PageView {
 	 *            结果集合
 	 */
 
-	public void setQueryResult(long rowCount, List records) {
+	public void setQueryResult(long rowCount, List<?> records) {
 		setRowCount(rowCount);
 		setRecords(records);
 	}
@@ -107,11 +107,11 @@ public class PageView {
 		setPageCount(this.rowCount % this.pageSize == 0 ? this.rowCount / this.pageSize : this.rowCount / this.pageSize + 1);
 	}
 
-	public List getRecords() {
+	public List<?> getRecords() {
 		return records;
 	}
 
-	public void setRecords(List records) {
+	public void setRecords(List<?> records) {
 		this.records = records;
 	}
 

@@ -1,15 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>游戏光年运营管理系统</title>
 <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-
 <div class="login">
     <div class="box png">
 		<div class="logo png"></div>
@@ -18,10 +16,10 @@
 			<form id="loginForm" name="loginForm" method="post"
 			action="${pageContext.servletContext.contextPath }/submitlogin.html">
 				<div class="name">
-					<label>用户名</label><input type="text" class="text" id="username" placeholder="用户名" name="username" tabindex="1">
+					<label>用户名</label><input type="text" class="text" id="username" name="username" tabindex="1">
 				</div>
 				<div class="pwd">
-					<label>密　码</label><input type="password" class="text" id="password" placeholder="密码" name="password" tabindex="2">
+					<label>密　码</label><input type="password" class="text" id="password" name="password" tabindex="2">
 					<input type="button" class="submit" tabindex="3" value="登录" onclick="checkUserForm();">
 					<div class="check"></div>
 				</div>
@@ -36,9 +34,9 @@
     <div class="footer">Copyright &copy; 2015 游戏光年版权所有</div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/fun.base.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/script.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/jslib/jquery/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/jslib/fun.base.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/jslib/script.js"></script>
 <script type="text/javascript">
 if ("${error}" != "") {
 	alert("${error}");
@@ -50,7 +48,6 @@ function checkUserForm() {
 		alert("用户名或密码不能为空");
 		return false;
 	}
-	var b;
 	$.ajax({
 				type : "POST",
 				url : "${pageContext.request.contextPath}/loginCheck.html?data="
@@ -70,9 +67,6 @@ function checkUserForm() {
 					}
 				}
 			});
-	if (b) {
-		return true;
-	}
 	document.loginForm.submit();
 }
 </script>

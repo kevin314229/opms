@@ -11,10 +11,10 @@
 	<sql id="selectId">
 		id,
 		accountName,
-		(select group_concat(name) from ly_role
-		where ly_role.id
-		in (SELECT role_id FROM acc_role WHERE
-		acc_id=account.id) ) roleName,
+		(select group_concat(name) from role
+		where role.id
+		in (SELECT role_id FROM account_role WHERE
+		account_id=account.id) ) roleName,
 		password,
 		description,
 		state,
