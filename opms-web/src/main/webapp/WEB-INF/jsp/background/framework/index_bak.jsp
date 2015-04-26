@@ -16,7 +16,7 @@
 	$(function() {
 		var h = document.getElementById("bom").offsetTop;
 		$(".cl_body").css("height", h - 38);
-		$(".leftTree").css("height", h - 40);
+		$("#leftTree").css("height", h - 40);
 
 		$(".leaf .leaf_body").css("height", h / 2 - 24 - 38);
 		$("#flow-btn").click(function() {

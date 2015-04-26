@@ -1766,12 +1766,6 @@ a {
 	word-break: break-all;
 }
 
-.leftTree {
-	float: left;
-	width: 16.7%;
-	border-right: 3px solid #DDDDDD
-}
-
 .divBody {
 	background: none repeat scroll 0 0 #FAFAFA;
 }
