@@ -1545,6 +1545,11 @@ li {
 
 .leaf {
 	margin: 20px 0 0;
+	border-radius: 16px;
+	float: left;
+	height: auto;
+	margin: 8px;
+	width: 450px;
 }
 
 .flow-btn {
@@ -1734,14 +1739,6 @@ a {
 
 .pagination a:hover,.pagination .active a {
 	background-color: #CFCFCF;
-}
-
-.leaf {
-	border-radius: 16px;
-	float: left;
-	height: auto;
-	margin: 8px;
-	width: 450px;
 }
 
 .container {

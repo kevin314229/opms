@@ -31,8 +31,9 @@
 			}
 		});
 		$("#frameCenter").ligerTab({
-			height : '100%',
-			changeHeightOnResize: true,
+			height : h - 38,
+			showSwitch: true,
+            ShowSwitchInTab: true
 		});
 		tab = $("#frameCenter").ligerGetTabManager();
 
@@ -92,10 +93,10 @@
 		});
 	}
 
-	function divsize() {
+	/* function divsize() {
 		var h = document.getElementById("bom").offsetTop;
 		$("#myHomePage").css("height", h - 32);
-	}
+	} */
 </script>
 <style type="text/css">
 .leaf .leaf_body {
@@ -134,9 +135,10 @@
 	text-overflow: ellipsis;
 }
 
+/*黑色*/
 .black {
 	background: #000;
-} /*黑色*/
+} 
 
 /*白色*/
 .white {
@@ -214,7 +216,6 @@
 .img03 {
 	background: url("${ctx}/images/img03.jpg");
 }
-
 </style>
 <script type="text/javascript">
 	$(document).ready(
@@ -325,77 +326,70 @@
 
 	<div id="index_body">
 		<div id="container">
-			<table>
-				<tr>
-					<td><div id="part1" class="leaf">
-							<div class="leaf_body">
-								<div class="skin">
-									<div>
-										<!-- 时钟显示 -->
-										<div id="ClockDate"></div>
-										<div id="ClockTime">
-											<span id="hours"></span> <span id="point">:</span> <span id="min"></span> <span id="point">:</span> <span id="sec"></span>
-										</div>
-									</div>
-								</div>
+			<div id="part1" class="leaf">
+				<div class="leaf_body">
+					<div class="skin">
+						<div>
+							<!-- 时钟显示 -->
+							<div id="ClockDate"></div>
+							<div id="ClockTime">
+								<span id="hours"></span> <span id="point">:</span> <span id="min"></span> <span id="point">:</span> <span id="sec"></span>
 							</div>
-						</div></td>
-					<td><div id="part2" class="leaf">
-							<div class="leaf_body">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="part2" class="leaf">
+				<div class="leaf_body">
+					<div class="skin">
+						<table>
+							<tr>
+								<td width="80px" valign="top" style="padding-top: 10px;">更换背景：</td>
+								<td><ul class="skin_list">
+										<li><span class="red"></span>&nbsp;红色&nbsp;</li>
+										<li><span class="black"></span>&nbsp;黑色&nbsp;</li>
+										<li><span class="white"></span>&nbsp;白色&nbsp;</li>
+										<li><span class="gray"></span>&nbsp;灰色&nbsp;</li>
+										<li><span class="yellow"></span>&nbsp;黄色&nbsp;</li>
+										<li><span class="orange"></span>&nbsp;橙色&nbsp;</li>
+										<li><span class="pink"></span>&nbsp;粉色&nbsp;</li>
+										<li><span class="light_purple"></span>&nbsp;浅紫&nbsp;</li>
+										<li><span class="dark_purple"></span>&nbsp;深紫&nbsp;</li>
+										<li><span class="shen_blue"></span>&nbsp;深蓝&nbsp;</li>
+										<li><span class="blue"></span>&nbsp;蓝色&nbsp;</li>
+										<li><span class="dark_blue"></span>&nbsp;暗蓝&nbsp;</li>
+										<li><span class="light_green"></span>&nbsp;浅绿&nbsp;</li>
+										<li><span class="dark_green"></span>&nbsp;深绿&nbsp;</li>
+									</ul></td>
+							</tr>
+							<tr>
+								<td width="80px" valign="top" style="padding-top: 10px;">背景图片：</td>
+								<td><ul class="skin_list">
+										<li><span class="img02" style="width: 100px; height: 100px;"></span>&nbsp;</li>
+										<li><span class="img03" style="width: 100px; height: 100px;"></span>&nbsp;</li>
+										<li><span class="img01" style="width: 100px; height: 100px;"></span></li>
+									</ul></td>
+							</tr>
+						</table>
 
-								<div class="skin">
-									<table>
-										<tr>
-											<td width="80px" valign="top" style="padding-top: 10px;">更换背景：</td>
-											<td><ul class="skin_list">
-													<li><span class="red"></span>&nbsp;红色&nbsp;</li>
-													<li><span class="black"></span>&nbsp;黑色&nbsp;</li>
-													<li><span class="white"></span>&nbsp;白色&nbsp;</li>
-													<li><span class="gray"></span>&nbsp;灰色&nbsp;</li>
-													<li><span class="yellow"></span>&nbsp;黄色&nbsp;</li>
-													<li><span class="orange"></span>&nbsp;橙色&nbsp;</li>
-													<li><span class="pink"></span>&nbsp;粉色&nbsp;</li>
-													<li><span class="light_purple"></span>&nbsp;浅紫&nbsp;</li>
-													<li><span class="dark_purple"></span>&nbsp;深紫&nbsp;</li>
-													<li><span class="shen_blue"></span>&nbsp;深蓝&nbsp;</li>
-													<li><span class="blue"></span>&nbsp;蓝色&nbsp;</li>
-													<li><span class="dark_blue"></span>&nbsp;暗蓝&nbsp;</li>
-													<li><span class="light_green"></span>&nbsp;浅绿&nbsp;</li>
-													<li><span class="dark_green"></span>&nbsp;深绿&nbsp;</li>
-												</ul></td>
-										</tr>
-										<tr>
-											<td width="80px" valign="top" style="padding-top: 10px;">背景图片：</td>
-											<td><ul class="skin_list">
-													<li><span class="img02" style="width: 100px; height: 100px;"></span>&nbsp;</li>
-													<li><span class="img03" style="width: 100px; height: 100px;"></span>&nbsp;</li>
-													<li><span class="img01" style="width: 100px; height: 100px;"></span></li>
-												</ul></td>
-										</tr>
-									</table>
+					</div>
 
-								</div>
-
-							</div>
-						</div></td>
-				</tr>
-				<tr>
-					<td><div id="part3" class="leaf">
-							<div class="leaf_body">
-								<div class="skin">
-									<div style="font-size: 14px; text-align: left; padding: 10px;">
-										公告栏：<br> 1、这里写介绍说明
-									</div>
-								</div>
-							</div>
-						</div></td>
-					<td><div id="part4" class="leaf">
-							<div class="leaf_body">
-								<div class="skin">备用</div>
-							</div>
-						</div></td>
-				</tr>
-			</table>
+				</div>
+			</div>
+			<div id="part3" class="leaf">
+				<div class="leaf_body">
+					<div class="skin">
+						<div style="font-size: 14px; text-align: left; padding: 10px;">
+							公告栏：<br> 1、这里写介绍说明
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="part4" class="leaf">
+				<div class="leaf_body">
+					<div class="skin">备用</div>
+				</div>
+			</div>
 		</div>
 
 		<div id="myHomePage">
@@ -404,7 +398,8 @@
 			</div>
 			<div id="frameCenter">
 				<div class="box-content" title="我的主页">
-					<div style="font-size: 14px; color: red;" id="lta">欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页欢迎进入主页</div>
+					<div style="font-size: 14px; color: red; "><p>欢迎进入主页<br></p>
+					</div>
 				</div>
 			</div>
 		</div>
