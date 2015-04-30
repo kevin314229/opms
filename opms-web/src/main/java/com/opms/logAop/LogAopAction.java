@@ -63,7 +63,7 @@ public class LogAopAction {
 		String name = null;
 		// 操作范围
 		/*
-		 * if (className.indexOf("Resources") > -1) { name = "资源管理"; } else if (className.indexOf("Roles") > -1) { name = "角色管理"; } else if (className.indexOf("User") > -1) { name = "用户管理"; }else{
+		 * if (className.indexOf("Resource") > -1) { name = "资源管理"; } else if (className.indexOf("Roles") > -1) { name = "角色管理"; } else if (className.indexOf("User") > -1) { name = "用户管理"; }else{
 		 * name=className; }
 		 */
 		name = className;

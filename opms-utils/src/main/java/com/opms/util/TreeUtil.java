@@ -19,7 +19,7 @@ public class TreeUtil {
 	 *            传入的父节点ID
 	 * @return String
 	 */
-	public static List<TreeObject> getChildResourcess(List<TreeObject> list, int praentId) {
+	public static List<TreeObject> getChildResources(List<TreeObject> list, int praentId) {
 		List<TreeObject> returnList = new ArrayList<TreeObject>();
 		for (Iterator<TreeObject> iterator = list.iterator(); iterator.hasNext();) {
 			TreeObject t = iterator.next();
@@ -38,14 +38,12 @@ public class TreeUtil {
 	 * @author LJN Email: mmm333zzz520@163.com
 	 * @date 2013-12-4 下午7:27:30
 	 * @param list
-	 * @param Resources
 	 */
 	private static void recursionFn(List<TreeObject> list, TreeObject t) {
 		List<TreeObject> childList = getChildList(list, t);// 得到子节点列表
 		t.setChildren(childList);
 		for (TreeObject tChild : childList) {
 			if (hasChild(list, tChild)) {// 判断是否有子节点
-				// returnList.add(Resources);
 				Iterator<TreeObject> it = childList.iterator();
 				while (it.hasNext()) {
 					TreeObject n = it.next();
@@ -72,16 +70,6 @@ public class TreeUtil {
 	// 判断是否有子节点
 	private static boolean hasChild(List<TreeObject> list, TreeObject t) {
 		return getChildList(list, t).size() > 0 ? true : false;
-	}
-
-	// 本地模拟数据测试
-	public static void main(String[] args) {
-		/*
-		 * long start = System.currentTimeMillis(); List<Resources> ResourcesList = new ArrayList<Resources>();
-		 * 
-		 * ResourcesUtil mt = new ResourcesUtil(); List<Resources> ns=mt.getChildResourcess(ResourcesList,0); for (Resources m : ns) { System.out.println(m.getName());
-		 * System.out.println(m.getChildren()); } long end = System.currentTimeMillis(); System.out.println("用时:" + (end - start) + "ms");
-		 */
 	}
 
 }

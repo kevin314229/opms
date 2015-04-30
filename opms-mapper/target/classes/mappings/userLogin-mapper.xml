@@ -20,14 +20,14 @@
 	<select id="query" resultType="UserLogin" parameterType="java.util.HashMap">
 		select
 		<include refid="selectId" />
-		from userloginlist where 1=1
+		from user_login where 1=1
 		
 	</select>
 	
 	
 	<!-- 增加用户 -->
 	<insert id="add" parameterType="Account">
-		insert into userloginlist ( userId,userName,
+		insert into user_login ( userId,userName,
 		loginIP)
 		values (#{userId},#{userName},
 		#{loginIP})

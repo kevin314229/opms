@@ -15,8 +15,8 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.stereotype.Service;
 
-import com.opms.entity.Resources;
-import com.opms.mapper.ResourcesMapper;
+import com.opms.entity.Resource;
+import com.opms.mapper.ResourceMapper;
 
 /**
  * 加载资源与权限的对应关系
@@ -26,7 +26,7 @@ import com.opms.mapper.ResourcesMapper;
 @Service
 public class MySecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 	@Autowired
-	private ResourcesMapper menuMapper;
+	private ResourceMapper menuMapper;
 	private static Map<String, Collection<ConfigAttribute>> resourceMap = null;
 
 	@Override
@@ -50,8 +50,8 @@ public class MySecurityMetadataSource implements FilterInvocationSecurityMetadat
 		// System.err.println("-----------MySecurityMetadataSource loadResourceDefine ----------- ");
 		if (resourceMap == null) {
 			resourceMap = new HashMap<String, Collection<ConfigAttribute>>();
-			List<Resources> menus = menuMapper.queryAll(new Resources());
-			for (Resources m : menus) {
+			List<Resource> menus = menuMapper.queryAll(new Resource());
+			for (Resource m : menus) {
 				Collection<ConfigAttribute> configAttributes = new ArrayList<ConfigAttribute>();
 				// TODO:ZZQ 通过资源名称来表示具体的权限 注意：必须"ROLE_"开头
 				// 关联代码：applicationContext-security.xml

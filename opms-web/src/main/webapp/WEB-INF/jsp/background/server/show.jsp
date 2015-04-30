@@ -15,7 +15,7 @@
 		loadingShow();
 		$.ajax({
 					type : 'POST',
-					url : "${pageContext.request.contextPath}/background/serverInfo/info.html",
+					url : "${pageContext.request.contextPath}/background/server/info.html",
 					dataType : 'json',
 					success : function(json) {
 						allLoadFinished = true;

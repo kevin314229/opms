@@ -87,9 +87,9 @@
 			return json;
 		};
 		var divid = "";
+		var jsonData;
 		var createHtml = function() {
-
-			var jsonData = jsonRequest();
+			jsonData = jsonRequest();
 			if (jsonData == '') {
 				return;
 			}
@@ -658,7 +658,6 @@
 		};
 		var rowline = function() {
 			var cb = [];
-
 			var arr = $A(divid.children[1].children.mytable.rows);
 			for ( var i = arr.length - 1; i >= 0; i--) {
 				var cbox = getChkBox(arr[i]).value;
@@ -735,7 +734,7 @@
 			return arr;
 		};
 		init();
-
+		
 		return {
 			setOptions : setOptions,
 			loadData : loadData,

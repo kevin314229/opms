@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 前台发送的是一个对象数组 后台需要以下对象接受 例如: menus[0].id 1 menus[0].level 1 menus[1].id 3 menus[1].level 2 menus[2].id 2 menus[2].level 3 这个菜单数组对象要接收这个对象,必须在这里加一个list<Resourcess>
+ * 前台发送的是一个对象数组 后台需要以下对象接受 例如: menus[0].id 1 menus[0].level 1 menus[1].id 3 menus[1].level 2 menus[2].id 2 menus[2].level 3 这个菜单数组对象要接收这个对象,必须在这里加一个list<Resource>
  * 
  */
 public class Params {
 
-	private List<Resources> resources = new ArrayList<Resources>();
+	private List<Resource> resources = new ArrayList<Resource>();
 	private List<String> id = new ArrayList<String>();
 
 	public List<String> getId() {
@@ -20,11 +20,11 @@ public class Params {
 		this.id = id;
 	}
 
-	public List<Resources> getResources() {
+	public List<Resource> getResources() {
 		return resources;
 	}
 
-	public void setResources(List<Resources> resources) {
+	public void setResources(List<Resource> resources) {
 		this.resources = resources;
 	}
 

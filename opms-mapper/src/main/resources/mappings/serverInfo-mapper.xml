@@ -5,6 +5,11 @@
 	<!-- 以下与实体类的中字段一致 -->
 	<sql id="selectId">
 		id,
+		name,
+		ip,
+		port,
+		visitKey,
+		operatorId,
 		cpuUsage,
 		setCpuUsage,
 		jvmUsage,
@@ -18,14 +23,19 @@
 	<!-- 查询 -->
 	<select id="query" resultType="ServerInfo" parameterType="java.util.HashMap">
 		select
-		<include refid="selectId" />
-		from server_info  
-		<where>
-		<if test="t.email != null and t.email != ''">
-			email like '%${t.email}%'
-		</if>
-		</where>
-		order By operTime desc
+		si.id,
+		si.name,
+		ip,
+		port,
+		cpuUsage,
+		setCpuUsage,
+		jvmUsage,
+		setJvmUsage,
+		ramUsage,
+		setRamUsage,
+		operator.name as mark
+		from server_info si, operator 
+		where si.operatorId = ${t.operatorId} and si.operatorId = operator.id
 	</select>
 	
 	<!-- 查询 -->
@@ -48,6 +58,11 @@
 	<!-- 新增 -->
 	<insert id="add" parameterType="ServerInfo">
 		insert into server_info (
+		name,
+		ip,
+		port,
+		visitKey,
+		operatorId,
 		cpuUsage,
 		setCpuUsage,
 		jvmUsage,
@@ -58,18 +73,39 @@
 		email,mark
 		) 
 		values(
+		#{name},
+		#{ip},
+		#{port},
+		#{visitKey},
+		#{operatorId},
 		#{cpuUsage},
 		#{setCpuUsage},
 		#{jvmUsage},
 		#{setJvmUsage},
 		#{ramUsage},
-		#{setJvmUsage},
+		#{setRamUsage},
 		#{operTime},
 		#{email},#{mark})
 	</insert>
-	
+	<!-- 更新 -->
+	<update id="update" parameterType="ServerInfo">
+		update server_info
+		set
+		name=#{name},
+		ip=#{ip},
+		port=#{port},
+		operatorId=#{operatorId},
+		cpuUsage=#{cpuUsage},
+		setCpuUsage=#{setCpuUsage},
+		setJvmUsage=#{setJvmUsage},
+		setRamUsage=#{setRamUsage},
+		email=#{email},
+		visitKey=#{visitKey},
+		mark=#{mark}
+		where id=#{id}
+	</update>
 	<!-- 删 -->
-	<delete id="deleteById" parameterType="String">
+	<delete id="delete" parameterType="String">
 		delete from server_info
 		where id=#{id}
 	</delete>

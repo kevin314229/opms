@@ -71,7 +71,7 @@ jQuery.validator.addMethod("checkpass", function(value, element) {
 		$("#form").submit();
 	}
 	function closeWin() {
-		 parent.$.ligerDialog.close(); //关闭弹出窗; //关闭弹出窗
+		parent.$.ligerDialog.close(); //关闭弹出窗; //关闭弹出窗
 		parent.$(".l-dialog,.l-window-mask").css("display","none"); 
 	}
 </script>

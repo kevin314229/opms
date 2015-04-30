@@ -39,8 +39,6 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 	/**
 	 * 自定义表单参数的name属性，默认是 j_username 和 j_password 定义登录成功和失败的跳转地址
 	 * 
-	 * @author LJN Email: mmm333zzz520@163.com
-	 * @date 2013-12-5 下午7:02:32
 	 */
 	public void init() {
 		// System.err.println(" ---------------  MyAuthenticationFilter init--------------- ");
@@ -81,15 +79,7 @@ public class MyAuthenticationFilter extends UsernamePasswordAuthenticationFilter
 			// exception);
 			throw exception;
 		}
-		// 当验证都通过后，把用户信息放在session里
-		request.getSession().setAttribute("accountSession", account);
 		// 记录登录信息
-		// UserLoginList userLoginList = new UserLoginList();
-		// userLoginList.setUserId(users.getUserId());
-		// System.out.println("userId----" + users.getUserId() + "---ip--"
-		// + Common.toIpAddr(request));
-		// userLoginList.setLoginIp(Common.toIpAddr(request));
-		// userLoginListService.add(userLoginList);
 		// 实现 Authentication
 		UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
 		// 允许子类设置详细属性

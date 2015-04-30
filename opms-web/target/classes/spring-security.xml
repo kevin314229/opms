@@ -45,7 +45,7 @@
 -->
         <!-- 关联代码：com.huaxin.security.MyUserDetailServiceImpl#obtionGrantedAuthorities
 -->
-        <!-- "ROLE_"固定，AAA为权限：注意对于我的例子其实是RESOURCES表的NAME字段的值 -->
+        <!-- "ROLE_"固定，AAA为权限：注意对于我的例子其实是Resource表的NAME字段的值 -->
         <!-- ↓↓↓SPRING默认的访问权限控制↓↓↓ -->
         
         <!-- 以上未列出的，也都必须验证才能访问 -->

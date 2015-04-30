@@ -10,7 +10,6 @@ jQuery.validator.addMethod("checkpass", function(value, element) {
 	 return this.optional(element) || ((value.length <= 16) && (value.length>=6));
 }, "密码由6至16位字符组合构成");
 
-
 	$(function() {
 		$("form").validate({
 			submitHandler : function(form) {//必须写在验证前面，否则无法ajax提交

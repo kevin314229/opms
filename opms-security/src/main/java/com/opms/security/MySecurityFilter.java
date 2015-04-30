@@ -68,6 +68,7 @@ public class MySecurityFilter extends AbstractSecurityInterceptor implements Fil
 		// 2.是否拥有权限
 		// this.accessDecisionManager.decide(authenticated, object, attributes);
 		// System.err.println(" ---------------  MySecurityFilter invoke--------------- ");
+		System.out.println(fi.getRequestUrl());
 		InterceptorStatusToken token = super.beforeInvocation(fi);
 		try {
 			fi.getChain().doFilter(fi.getRequest(), fi.getResponse());

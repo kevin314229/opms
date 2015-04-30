@@ -1,3 +1,4 @@
+<%@page import="com.opms.util.SessionKey"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -10,93 +11,83 @@
 <head>
 <%@ include file="/common/header.jsp"%>
 <script type="text/javascript">
-	var tab = null;
-	var tree = null;
-	var grid;
-	var openMainPage = false;
-	$(function() {
-		var h = document.getElementById("bom").offsetTop;
-		$("#myHomePage").css("height", h - 38);
-		$("#leftTree").css("height", h - 40);
-		$(".leaf .leaf_body").css("height", h / 2 - 24 - 38);
-		$("#flow-btn").click(function() {
-			if (openMainPage) {
-				$("#container").slideDown(500);
-				$("#myHomePage").slideUp(500);
-				openMainPage = false;
-			} else {
-				$("#container").slideUp(500);
-				$("#myHomePage").slideDown(500);
-				openMainPage = true;
-			}
+    var tab = null;
+    var tree = null;
+    var openMainPage = false;
+    function addTabEvent(tabid, text, url) {
+	tab.removeTabItem(tabid);
+	tab.addTabItem({
+	    tabid : tabid,
+	    text : text,
+	    url : url
+	});
+    }
+    $(function() {
+	var h = document.getElementById("bom").offsetTop;
+	$("#myHomePage").css("height", h - 38);
+	$("#leftTree").css("height", h - 40);
+	$(".leaf .leaf_body").css("height", h / 2 - 24 - 38);
+	$("#flow-btn").click(function() {
+	    if (openMainPage) {
+		$("#container").slideDown(500);
+		$("#myHomePage").slideUp(500);
+		openMainPage = false;
+	    } else {
+		$("#container").slideUp(500);
+		$("#myHomePage").slideDown(500);
+		openMainPage = true;
+	    }
+	});
+	$("#frameCenter").ligerTab({
+	    height : h - 38,
+	    showSwitch : true,
+	    ShowSwitchInTab : true
+	});
+	tab = $("#frameCenter").ligerGetTabManager();
+	$.ajax({
+	    async : false, //请勿改成异步，下面有些程序依赖此请数据
+	    type : "POST",
+	    url : '${ctx}/background/resource/resources.html?id=' +
+<%=request.getSession()
+					.getAttribute(SessionKey.USER_SESSION_ID).toString()%>
+    ,
+	    dataType : 'json',
+	    success : function(json) {
+		var ul = $("#menu");
+		ul.html('');
+		var li = '';
+		var data = json.resourceTree;
+		$.each(data, function(i) {
+		    li += '<li class="level1"><a href="javascript:void(0)">' + data[i].name + '</a>';
+		    li += '<ul class="level2" id="level2_'+i+'">';
+		    var jdata = data[i].children;
+		    $.each(jdata, function(j) {
+			li += '<li><a href="${pageContext.request.contextPath}'+jdata[j].resUrl+'" id="level2_'+jdata[j].resKey+'" name="'+jdata[j].name+'">' + jdata[j].name + '</a></li>';
+		    });
+		    li += '</ul></li>';
 		});
-		$("#frameCenter").ligerTab({
-			height : h - 38,
-			showSwitch: true,
-            ShowSwitchInTab: true
-		});
-		tab = $("#frameCenter").ligerGetTabManager();
-
-		$
-				.ajax({
-					async : false, //请勿改成异步，下面有些程序依赖此请数据
-					type : "POST",
-					url : '${ctx}/background/resources/resources.html?id='
-							+
-<%=request.getSession().getAttribute("userSessionId")
-					.toString()%>
-	,
-					dataType : 'json',
-					success : function(json) {
-						var ul = $("#menu");
-						ul.html('');
-						var li = '';
-						var data = json.resourceslists;
-						$
-								.each(
-										data,
-										function(i) {
-											li += '<li class="level1"><a href="javascript:void(0)">'
-													+ data[i].name + '</a>';
-											li += '<ul class="level2" id="level2_'+i+'">';
-											var jdata = data[i].children;
-											$
-													.each(
-															jdata,
-															function(j) {
-																li += '<li><a href="${pageContext.request.contextPath}'+jdata[j].resUrl+'" id="level2_'+jdata[j].resKey+'" name="'+jdata[j].name+'">'
-																		+ jdata[j].name
-																		+ '</a></li>';
-															});
-											li += '</ul></li>';
-										});
-						ul.html(li);
-					}
-				});
-
-		$('a[id^="level2_"]').unbind('click').bind('click', function(e) {
-			var sid = this.id;
-			sid = sid.substring(sid.indexOf("level2_") + 7, sid.length);
-			var name = this.name;
-			var url = this.href;
-			addTabEvent(sid, name, url);
-			return false;
-		});
+		ul.html(li);
+	    }
 	});
 
-	function addTabEvent(tabid, text, url) {
-		tab.removeTabItem(tabid);
-		tab.addTabItem({
-			tabid : tabid,
-			text : text,
-			url : url
-		});
-	}
-
-	/* function divsize() {
-		var h = document.getElementById("bom").offsetTop;
-		$("#myHomePage").css("height", h - 32);
-	} */
+	$('a[id^="level2_"]').unbind('click').bind('click', function(e) {
+	    var sid = this.id;
+	    sid = sid.substring(sid.indexOf("level2_") + 7, sid.length);
+	    var name = this.name;
+	    var url = this.href;
+	    addTabEvent(sid, name, url);
+	    return false;
+	});
+	$("#operatorUI").click("click", function() {
+	    parent.$.ligerDialog().open({
+		width : 200,
+		height : 200,
+		url : rootPath + "/background/operator/chooseUI.html",
+		title : "选择运营平台",
+		isHidden : true
+	    });
+	});
+    });
 </script>
 <style type="text/css">
 .leaf .leaf_body {
@@ -138,7 +129,7 @@
 /*黑色*/
 .black {
 	background: #000;
-} 
+}
 
 /*白色*/
 .white {
@@ -218,44 +209,37 @@
 }
 </style>
 <script type="text/javascript">
-	$(document).ready(
-			function() {
-				//为了安全 google chrome 等浏览器是禁止本地文件写Cookie的即file:///F:/Lord%20community/test/Untitled-2.html这样的以file开头的是不能写本地文件的
-				var cookieClass = getCookie('class');//读取需要缓存的对象。
-				$("body").attr("class", cookieClass);//
-				$(".skin_list li span").each(
-						function() {
-							$(this).click(
-									function() {
-										var className = $(this).attr("class");//保存当前选择的类名
-										$("body").attr("class", className, 30);//把选中的类名给body
-										function SetCookie(name, value, day)//两个参数，一个是cookie的名子，一个是值
-										{
-											var exp = new Date(); //new Date("December 31, 9998");
-											exp.setTime(exp.getTime() + day
-													* 24 * 60 * 60 * 1000);
-											document.cookie = name + "="
-													+ escape(value)
-													+ ";expires="
-													+ exp.toGMTString();
-										}
-										SetCookie("class", className, 30);
-									});
-						});
-			});
-	function getCookie(name)//取cookies函数       
-	{
-		var nameEQ = name + "=";
-		var ca = document.cookie.split(';');
-		for (var i = 0; i < ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0) == ' ')
-				c = c.substring(1, c.length);
-			if (c.indexOf(nameEQ) == 0)
-				return c.substring(nameEQ.length, c.length);
+    $(document).ready(function() {
+	//为了安全 google chrome 等浏览器是禁止本地文件写Cookie的即file:///F:/Lord%20community/test/Untitled-2.html这样的以file开头的是不能写本地文件的
+	var cookieClass = getCookie('class');//读取需要缓存的对象。
+	$("body").attr("class", cookieClass);//
+	$(".skin_list li span").each(function() {
+	    $(this).click(function() {
+		var className = $(this).attr("class");//保存当前选择的类名
+		$("body").attr("class", className, 30);//把选中的类名给body
+		function SetCookie(name, value, day)//两个参数，一个是cookie的名子，一个是值
+		{
+		    var exp = new Date(); //new Date("December 31, 9998");
+		    exp.setTime(exp.getTime() + day * 24 * 60 * 60 * 1000);
+		    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
 		}
-		return null;
+		SetCookie("class", className, 30);
+	    });
+	});
+    });
+    function getCookie(name)//取cookies函数       
+    {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+	    var c = ca[i];
+	    while (c.charAt(0) == ' ')
+		c = c.substring(1, c.length);
+	    if (c.indexOf(nameEQ) == 0)
+		return c.substring(nameEQ.length, c.length);
 	}
+	return null;
+    }
 </script>
 <!-- **********************************时钟显示开始********************************** -->
 <style type="text/css">
@@ -284,45 +268,36 @@
 }
 </style>
 <script type="text/javascript">
-	$(document).ready(
-			function() {
-				var monthNames = [ "January", "February", "March", "April",
-						"May", "June", "July", "August", "September",
-						"October", "November", "December" ];
-				var dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday",
-						"Thursday", "Friday", "Saturday" ]
-				var newDate = new Date();
-				newDate.setDate(newDate.getDate());
-				$('#ClockDate').html(
-						dayNames[newDate.getDay()] + " " + newDate.getDate()
-								+ ' ' + monthNames[newDate.getMonth()] + ' '
-								+ newDate.getFullYear());
-				setInterval(function() {
-					var seconds = new Date().getSeconds();
-					$("#sec").html((seconds < 10 ? "0" : "") + seconds);
-				}, 1000);
+    $(document).ready(function() {
+	var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+	var dayNames = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+	var newDate = new Date();
+	newDate.setDate(newDate.getDate());
+	$('#ClockDate').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+	setInterval(function() {
+	    var seconds = new Date().getSeconds();
+	    $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+	}, 1000);
 
-				setInterval(function() {
-					var minutes = new Date().getMinutes();
-					$("#min").html((minutes < 10 ? "0" : "") + minutes);
-				}, 1000);
+	setInterval(function() {
+	    var minutes = new Date().getMinutes();
+	    $("#min").html((minutes < 10 ? "0" : "") + minutes);
+	}, 1000);
 
-				setInterval(function() {
-					var hours = new Date().getHours();
-					$("#hours").html((hours < 10 ? "0" : "") + hours);
-				}, 1000);
+	setInterval(function() {
+	    var hours = new Date().getHours();
+	    $("#hours").html((hours < 10 ? "0" : "") + hours);
+	}, 1000);
 
-			});
+    });
 </script>
 <!-- **********************************时钟显示结束********************************** -->
 </head>
 
-<body onresize="divsize();">
-
+<body>
 	<div class="header" id="header">
 		<span id="flow-btn" style="z-index: 0">主页</span>
 	</div>
-
 
 	<div id="index_body">
 		<div id="container">
@@ -379,15 +354,82 @@
 			<div id="part3" class="leaf">
 				<div class="leaf_body">
 					<div class="skin">
-						<div style="font-size: 14px; text-align: left; padding: 10px;">
-							公告栏：<br> 1、这里写介绍说明
-						</div>
+						<input type="hidden" id="popTxt" value="选择运营平台"/>
+						<div id="btn1"></div>
+
+						<script type="text/javascript">
+			    $("#btn1").ligerButton({
+				text : '获取值',
+				click : function() {
+				    var value = $.ligerui.get("popTxt").getValue();
+				    alert(value);
+				}
+			    });
+
+			    $("#popTxt").ligerPopupEdit({
+					condition : {
+					    prefixID : 'condtion_',
+					    fields : [ {
+						name : 'CompanyName',
+						type : 'text',
+						label : '公司名'
+					    } ]
+					},
+					grid : getGridOptions(true),
+					valueField : 'CustomerID',
+					textField : 'CustomerID',
+					width : 200
+			    });
+
+			    function getGridOptions(checkbox) {
+				var options = {
+				    columns : [ {
+					display : '顾客',
+					name : 'CustomerID',
+					align : 'left',
+					width : 100,
+					minWidth : 60
+				    }, {
+					display : '公司名',
+					name : 'CompanyName',
+					minWidth : 120,
+					width : 100
+				    }, {
+					display : '联系名',
+					name : 'ContactName',
+					minWidth : 140,
+					width : 100
+				    }, {
+					display : '电话',
+					name : 'Phone',
+					width : 100
+				    }, {
+					display : '城市',
+					name : 'City',
+					width : 100
+				    }, {
+					display : '国家',
+					name : 'Country',
+					width : 100
+				    } ],
+				    switchPageSizeApplyComboBox : false,
+				    data : $.extend({}, CustomersData),
+				    pageSize : 10,
+				    checkbox : checkbox
+				};
+				return options;
+			    }
+			</script>
 					</div>
 				</div>
 			</div>
 			<div id="part4" class="leaf">
 				<div class="leaf_body">
-					<div class="skin">备用</div>
+					<div class="skin">
+						<div style="font-size: 14px; text-align: left; padding: 10px;">
+							公告栏：<br> 1、这里写介绍说明
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -398,7 +440,10 @@
 			</div>
 			<div id="frameCenter">
 				<div class="box-content" title="我的主页">
-					<div style="font-size: 14px; color: red; "><p>欢迎进入主页<br></p>
+					<div style="font-size: 14px; color: red;">
+						<p>
+							欢迎进入主页<br>
+						</p>
 					</div>
 				</div>
 			</div>

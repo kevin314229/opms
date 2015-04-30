@@ -56,7 +56,9 @@ public class PagePlugin implements Interceptor {
 				if (parameterObject instanceof PageView) { // 参数就是Pages实体
 					pageView = (PageView) parameterObject;
 				} else if (parameterObject instanceof Map) {
-					for (Entry entry : (Set<Entry>) ((Map) parameterObject).entrySet()) {
+					Map<String, Object> map = (Map<String, Object>) parameterObject;
+					Set<Entry<String, Object>> set = map.entrySet();
+					for (Entry<String, Object> entry : set) {
 						if (entry.getValue() instanceof PageView) {
 							pageView = (PageView) entry.getValue();
 							break;

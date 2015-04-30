@@ -36,7 +36,7 @@ input[type="text"] {
 <script type="text/javascript">
 $(function(){
 	loadingShow();
-	var url = "${pageContext.request.contextPath}/background/serverInfo/warnInfo.html";
+	var url = "${pageContext.request.contextPath}/background/server/warnInfo.html";
 	$.ajax({
 		type : 'POST',
 		url : url,
@@ -101,7 +101,7 @@ function createDiskInfosHtml(datas){
 function modifySer(key){
 	$.ajax({
         async: false,
-        url: "${pageContext.request.contextPath}/background/serverInfo/modifySer.html",
+        url: "${pageContext.request.contextPath}/background/server/modifySer.html",
         data:{"key":key,"value":$("#"+key).val()},
         dataType: "json",
         success: function (data) {

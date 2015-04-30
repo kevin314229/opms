@@ -7,33 +7,51 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import com.opms.util.JsonDateSerializer;
 
+/**
+ * 服务器信息
+ * 
+ * @author kevin
+ * 
+ */
 public class ServerInfo {
-	private String id;
-	// cpu使用率
-	private String cpuUsage;
-	// 预设cpu使用率
-	private String setCpuUsage;
-	// 当前使用Jvm使用率
-	private String jvmUsage;
-	// 预设Jvm使用率
-	private String setJvmUsage;
-	// 当前使用Ram使用率
-	private String ramUsage;
-	// 预设Ram使用率
-	private String setRamUsage;
-	// 发送时间
-	private Date operTime;
-	// 发送的邮件
-	private String email;
-	// 时间字符串
-	private String stringTime;
-	private String mark;
 
-	public String getId() {
+	private int id;// 服务器
+
+	private String name;// 服务器名称
+
+	private String ip;// 服务器访问IP
+
+	private int port;// 访问端口
+
+	private String visitKey;// 访问key
+
+	private int operatorId;// 运营商ID
+
+	private String cpuUsage;// cpu使用率
+
+	private String setCpuUsage;// 预设cpu使用率
+
+	private String jvmUsage;// 当前使用Jvm使用率
+
+	private String setJvmUsage;// 预设Jvm使用率
+
+	private String ramUsage;// 当前使用Ram使用率
+
+	private String setRamUsage;// 预设Ram使用率
+
+	private Date operTime;// 发送时间
+
+	private String email;// 发送的邮件
+
+	private String stringTime;// 时间字符串
+
+	private String mark;// 扩展
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -126,4 +144,45 @@ public class ServerInfo {
 	public void setMark(String mark) {
 		this.mark = mark;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+	public String getVisitKey() {
+		return visitKey;
+	}
+
+	public void setVisitKey(String visitKey) {
+		this.visitKey = visitKey;
+	}
+
+	public int getOperatorId() {
+		return operatorId;
+	}
+
+	public void setOperatorId(int operatorId) {
+		this.operatorId = operatorId;
+	}
+	
 }

@@ -308,17 +308,7 @@ public class Common {
 	 * @return
 	 */
 	public static String findUserSessionId(HttpServletRequest request) {
-		return request.getSession().getAttribute("userSessionId").toString();
-	}
-
-	/**
-	 * 获取登录账号的的对象
-	 * 
-	 * @param request
-	 * @return Object 返回是Object..需要转型为(Account)Object
-	 */
-	public static Object findUserSession(HttpServletRequest request) {
-		return request.getSession().getAttribute("userSession");
+		return request.getSession().getAttribute(SessionKey.USER_SESSION_ID).toString();
 	}
 
 	/**

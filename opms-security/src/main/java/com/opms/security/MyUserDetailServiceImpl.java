@@ -15,9 +15,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.opms.entity.Account;
-import com.opms.entity.Resources;
+import com.opms.entity.Resource;
 import com.opms.mapper.AccountMapper;
-import com.opms.mapper.ResourcesMapper;
+import com.opms.mapper.ResourceMapper;
 import com.opms.util.PropertiesUtils;
 
 /**
@@ -37,7 +37,7 @@ public class MyUserDetailServiceImpl implements UserDetailsService {
 	@Autowired
 	private AccountMapper accountMapper;
 	@Autowired
-	private ResourcesMapper menuMapper;
+	private ResourceMapper menuMapper;
 
 	// 登录验证
 	@Override
@@ -59,14 +59,14 @@ public class MyUserDetailServiceImpl implements UserDetailsService {
 
 	// 取得用户的权限
 	private Set<GrantedAuthority> obtionGrantedAuthorities(Account account) {
-		List<Resources> menus = null;
+		List<Resource> menus = null;
 		if (PropertiesUtils.findPropertiesKey("rootName").equals(account.getAccountName())) {// 根据账号拥有所有权限
-			menus = menuMapper.queryAll(new Resources());
+			menus = menuMapper.queryAll(new Resource());
 		} else {
-			menus = menuMapper.findAccountResourcess(String.valueOf(account.getId()));
+			menus = menuMapper.findAccountResources(String.valueOf(account.getId()));
 		}
 		Set<GrantedAuthority> authSet = new HashSet<GrantedAuthority>();
-		for (Resources res : menus) {
+		for (Resource res : menus) {
 			// TODO:ZZQ 用户可以访问的资源名称（或者说用户所拥有的权限） 注意：必须"ROLE_"开头
 			// 关联代码：applicationContext-security.xml
 			// 关联代码：com.huaxin.security.MySecurityMetadataSource#loadResourceDefine

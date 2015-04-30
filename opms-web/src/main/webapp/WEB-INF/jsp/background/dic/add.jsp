@@ -6,12 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="/common/header.jsp"%>
 <script type="text/javascript">
-
 	$(function() {
-		bydicType("res_type","dicTypeId");//调用字典ajax
-		
-
-	$("form").validate({
+		loadOptionBox({
+		    url:"/background/dicType/findDicType.html",
+		    boxId:"dicTypeId",
+		    optionValue:"id",
+		    optionName:"dicTypeName"
+		}); 
+		$("form").validate({
 			submitHandler : function(form) {//必须写在验证前面，否则无法ajax提交
 				$(form).ajaxSubmit({//验证新增是否成功
 					type : "post",

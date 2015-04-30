@@ -55,7 +55,7 @@
 				parent.$.ligerDialog.alert("只能选中一个");
 				return;
 			}
-			parent.addTabEvent("permissions", "分配权限", rootPath + '/background/resources/aution.html?roleId='+cbox);
+			parent.addTabEvent("permissions", "分配权限", rootPath + '/background/resource/aution.html?roleId='+cbox);
 		});
 		$("#editView").click("click", function() {//绑定查询按扭
 			var cbox=grid.getSelectedCheckbox();

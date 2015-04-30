@@ -11,7 +11,7 @@ public class Roles implements java.io.Serializable {
 	private String name;
 	private String roleKey;// 唯一,新境时,需要判断
 	private String description;
-	private Set<Resources> resources = new HashSet<Resources>(0);
+	private Set<Resource> resources = new HashSet<Resource>(0);
 
 	public Roles() {
 	}
@@ -40,11 +40,11 @@ public class Roles implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Set<Resources> getResources() {
+	public Set<Resource> getResources() {
 		return resources;
 	}
 
-	public void setResources(Set<Resources> resources) {
+	public void setResources(Set<Resource> resources) {
 		this.resources = resources;
 	}
 
