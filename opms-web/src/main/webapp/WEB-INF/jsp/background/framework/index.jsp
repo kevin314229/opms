@@ -354,7 +354,7 @@
 			<div id="part3" class="leaf">
 				<div class="leaf_body">
 					<div class="skin">
-						<input type="hidden" id="popTxt" value="选择运营平台"/>
+						<input type="text" id="popTxt" value="选择运营平台"/>
 						<div id="btn1"></div>
 
 						<script type="text/javascript">
@@ -376,8 +376,8 @@
 					    } ]
 					},
 					grid : getGridOptions(true),
-					valueField : 'CustomerID',
-					textField : 'CustomerID',
+					valueField : 'Country',
+					textField : 'Country',
 					width : 200
 			    });
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.opms.mapper.OperatorMapper">
+	<!-- 以下与实体类的中字段一致 -->
+	<sql id="selectId">
+		id,
+		name,
+		area
+	</sql>
+	<!-- 查询 -->
+	<select id="query" resultType="Operator" parameterType="java.util.HashMap">
+		select
+		<include refid="selectId" />
+		from operator  
+	</select>
+	
+	<!-- 查询 -->
+	<select id="queryAll" resultType="Operator" parameterType="Operator">
+		select
+		<include refid="selectId" />
+		from operator
+	</select>
+	
+	<!-- 新增 -->
+	<insert id="add" parameterType="Operator" keyProperty="id" useGeneratedKeys="true">
+		insert into operator (
+		name,
+		area
+		) 
+		values(
+		#{name},
+		#{area}
+		)
+	</insert>
+	<!-- 更新 -->
+	<update id="update" parameterType="Operator">
+		update operator
+		<set>
+			<if test="name != null and name != ''">
+				name=#{name},
+			</if>
+			<if test="area != null and area != ''">
+				area=#{area},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	<!-- 删 -->
+	<delete id="delete" parameterType="String">
+		delete from operator
+		where id=#{id}
+	</delete>
+	
+	<select id="getById" parameterType="String" resultType="Operator">
+		select * from operator where id= #{id}
+	</select>
+	
+</mapper>
