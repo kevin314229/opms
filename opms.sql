@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50623
 File Encoding         : 65001
 
-Date: 2015-04-25 18:50:44
+Date: 2015-05-04 15:24:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -91,7 +91,7 @@ CREATE TABLE `dic_type` (
 -- Records of dic_type
 -- ----------------------------
 INSERT INTO `dic_type` VALUES ('1', 'res_type', '菜单类型', '菜单类型是目录,菜单,按扭,');
-INSERT INTO `dic_type` VALUES ('2', '2', '2', '2');
+INSERT INTO `dic_type` VALUES ('2', '2', '测试名称', '2');
 
 -- ----------------------------
 -- Table structure for log
@@ -106,7 +106,7 @@ CREATE TABLE `log` (
   `userIP` varchar(30) DEFAULT NULL COMMENT '用户IP',
   `operTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2842 DEFAULT CHARSET=utf8 COMMENT='操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=3002 DEFAULT CHARSET=utf8 COMMENT='操作日志表';
 
 -- ----------------------------
 -- Records of log
@@ -1456,56 +1456,246 @@ INSERT INTO `log` VALUES ('2838', 'root', 'UserLoginServiceImpl', 'add', '3', '0
 INSERT INTO `log` VALUES ('2839', 'root', 'UserLoginServiceImpl', 'add', '9', '0:0:0:0:0:0:0:1', '2015-04-25 14:40:31');
 INSERT INTO `log` VALUES ('2840', 'root', 'UserLoginServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-25 18:01:03');
 INSERT INTO `log` VALUES ('2841', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-25 18:46:33');
+INSERT INTO `log` VALUES ('2842', 'root', 'UserLoginServiceImpl', 'add', '49', '0:0:0:0:0:0:0:1', '2015-04-27 11:23:45');
+INSERT INTO `log` VALUES ('2843', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-27 13:46:52');
+INSERT INTO `log` VALUES ('2844', 'root', 'UserLoginServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-27 16:21:36');
+INSERT INTO `log` VALUES ('2845', 'root', 'UserLoginServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-27 18:26:37');
+INSERT INTO `log` VALUES ('2846', 'root', 'ResourcesServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-27 18:31:28');
+INSERT INTO `log` VALUES ('2847', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-27 18:33:01');
+INSERT INTO `log` VALUES ('2848', 'root', 'ResourcesServiceImpl', 'update', '8', '0:0:0:0:0:0:0:1', '2015-04-27 18:33:13');
+INSERT INTO `log` VALUES ('2849', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-27 18:33:24');
+INSERT INTO `log` VALUES ('2850', 'root', 'UserLoginServiceImpl', 'add', '10', '0:0:0:0:0:0:0:1', '2015-04-27 19:51:16');
+INSERT INTO `log` VALUES ('2851', 'root', 'UserLoginServiceImpl', 'add', '22', '0:0:0:0:0:0:0:1', '2015-04-27 20:11:32');
+INSERT INTO `log` VALUES ('2852', 'root', 'ResourcesServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-27 20:28:00');
+INSERT INTO `log` VALUES ('2853', 'root', 'UserLoginServiceImpl', 'add', '9', '0:0:0:0:0:0:0:1', '2015-04-27 20:30:09');
+INSERT INTO `log` VALUES ('2854', 'root', 'ServerInfoServiceImpl', 'add', '-1430139418182', '0:0:0:0:0:0:0:1', '2015-04-27 20:56:58');
+INSERT INTO `log` VALUES ('2855', 'root', 'ServerInfoServiceImpl', 'add', '-1430139643419', '0:0:0:0:0:0:0:1', '2015-04-27 21:00:43');
+INSERT INTO `log` VALUES ('2856', 'root', 'ServerInfoServiceImpl', 'add', '15', '0:0:0:0:0:0:0:1', '2015-04-27 21:02:00');
+INSERT INTO `log` VALUES ('2857', 'root', 'UserLoginServiceImpl', 'add', '7', '0:0:0:0:0:0:0:1', '2015-04-27 22:04:59');
+INSERT INTO `log` VALUES ('2858', 'root', 'UserLoginServiceImpl', 'add', '179', '0:0:0:0:0:0:0:1', '2015-04-28 09:59:36');
+INSERT INTO `log` VALUES ('2859', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-28 10:59:39');
+INSERT INTO `log` VALUES ('2860', 'root', 'ResourcesServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-28 11:13:45');
+INSERT INTO `log` VALUES ('2861', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-28 11:14:03');
+INSERT INTO `log` VALUES ('2862', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-28 11:14:16');
+INSERT INTO `log` VALUES ('2863', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-28 12:12:09');
+INSERT INTO `log` VALUES ('2864', 'root', 'UserLoginServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-28 12:17:47');
+INSERT INTO `log` VALUES ('2865', 'root', 'UserLoginServiceImpl', 'add', '9', '0:0:0:0:0:0:0:1', '2015-04-28 13:45:00');
+INSERT INTO `log` VALUES ('2866', 'root', 'UserLoginServiceImpl', 'add', '8', '0:0:0:0:0:0:0:1', '2015-04-28 13:45:29');
+INSERT INTO `log` VALUES ('2867', 'root', 'UserLoginServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-28 14:15:30');
+INSERT INTO `log` VALUES ('2868', 'root', 'UserLoginServiceImpl', 'add', '34', '0:0:0:0:0:0:0:1', '2015-04-28 15:41:15');
+INSERT INTO `log` VALUES ('2869', 'root', 'UserLoginServiceImpl', 'add', '27', '0:0:0:0:0:0:0:1', '2015-04-28 16:02:01');
+INSERT INTO `log` VALUES ('2870', 'root', 'UserLoginServiceImpl', 'add', '26', '0:0:0:0:0:0:0:1', '2015-04-28 16:16:42');
+INSERT INTO `log` VALUES ('2871', 'root', 'UserLoginServiceImpl', 'add', '56', '0:0:0:0:0:0:0:1', '2015-04-28 18:22:00');
+INSERT INTO `log` VALUES ('2872', 'root', 'UserLoginServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-28 19:47:29');
+INSERT INTO `log` VALUES ('2873', 'root', 'ServerInfoServiceImpl', 'add', '31', '0:0:0:0:0:0:0:1', '2015-04-28 20:32:02');
+INSERT INTO `log` VALUES ('2874', 'root', 'UserLoginServiceImpl', 'add', '8', '0:0:0:0:0:0:0:1', '2015-04-28 20:34:30');
+INSERT INTO `log` VALUES ('2875', 'root', 'UserLoginServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-28 20:35:32');
+INSERT INTO `log` VALUES ('2876', 'root', 'UserLoginServiceImpl', 'add', '56', '0:0:0:0:0:0:0:1', '2015-04-29 09:38:23');
+INSERT INTO `log` VALUES ('2877', 'root', 'ServerInfoServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-29 10:37:17');
+INSERT INTO `log` VALUES ('2878', 'root', 'ServerInfoServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-29 10:39:20');
+INSERT INTO `log` VALUES ('2879', 'root', 'ServerInfoServiceImpl', 'update', '-1430276335215', '0:0:0:0:0:0:0:1', '2015-04-29 10:58:55');
+INSERT INTO `log` VALUES ('2880', 'root', 'ServerInfoServiceImpl', 'update', '-1430276420767', '0:0:0:0:0:0:0:1', '2015-04-29 11:00:20');
+INSERT INTO `log` VALUES ('2881', 'root', 'UserLoginServiceImpl', 'add', '22', '0:0:0:0:0:0:0:1', '2015-04-29 15:11:59');
+INSERT INTO `log` VALUES ('2882', 'root', 'ServerInfoServiceImpl', 'update', '9', '0:0:0:0:0:0:0:1', '2015-04-29 17:00:27');
+INSERT INTO `log` VALUES ('2883', 'root', 'ServerInfoServiceImpl', 'updateOperator', '8', '0:0:0:0:0:0:0:1', '2015-04-29 17:01:56');
+INSERT INTO `log` VALUES ('2884', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 17:05:26');
+INSERT INTO `log` VALUES ('2885', 'root', 'ServerInfoServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-29 17:19:03');
+INSERT INTO `log` VALUES ('2886', 'root', 'ServerInfoServiceImpl', 'updateOperator', '3', '0:0:0:0:0:0:0:1', '2015-04-29 17:25:36');
+INSERT INTO `log` VALUES ('2887', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 17:27:31');
+INSERT INTO `log` VALUES ('2888', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 17:35:01');
+INSERT INTO `log` VALUES ('2889', 'root', 'ServerInfoServiceImpl', 'updateOperator', '4', '0:0:0:0:0:0:0:1', '2015-04-29 17:35:53');
+INSERT INTO `log` VALUES ('2890', 'root', 'ServerInfoServiceImpl', 'updateOperator', '2', '0:0:0:0:0:0:0:1', '2015-04-29 17:37:02');
+INSERT INTO `log` VALUES ('2891', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-29 17:42:51');
+INSERT INTO `log` VALUES ('2892', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-29 17:43:28');
+INSERT INTO `log` VALUES ('2893', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 17:45:00');
+INSERT INTO `log` VALUES ('2894', 'root', 'ServerInfoServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-04-29 17:47:24');
+INSERT INTO `log` VALUES ('2895', 'root', 'ServerInfoServiceImpl', 'delete', '-1430300898996', '0:0:0:0:0:0:0:1', '2015-04-29 17:48:19');
+INSERT INTO `log` VALUES ('2896', 'root', 'ServerInfoServiceImpl', 'deleteOperator', '-1430301051978', '0:0:0:0:0:0:0:1', '2015-04-29 17:50:51');
+INSERT INTO `log` VALUES ('2897', 'root', 'UserLoginServiceImpl', 'add', '40', '0:0:0:0:0:0:0:1', '2015-04-29 17:53:55');
+INSERT INTO `log` VALUES ('2898', 'root', 'ServerInfoServiceImpl', 'deleteOperator', '29', '0:0:0:0:0:0:0:1', '2015-04-29 17:57:23');
+INSERT INTO `log` VALUES ('2899', 'root', 'ServerInfoServiceImpl', 'delete', '3', '0:0:0:0:0:0:0:1', '2015-04-29 17:57:39');
+INSERT INTO `log` VALUES ('2900', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 17:58:00');
+INSERT INTO `log` VALUES ('2901', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 18:00:57');
+INSERT INTO `log` VALUES ('2902', 'root', 'ServerInfoServiceImpl', 'update', '5', '0:0:0:0:0:0:0:1', '2015-04-29 18:03:56');
+INSERT INTO `log` VALUES ('2903', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-29 18:09:10');
+INSERT INTO `log` VALUES ('2904', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-04-29 18:11:30');
+INSERT INTO `log` VALUES ('2905', 'root', 'UserLoginServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-29 20:07:29');
+INSERT INTO `log` VALUES ('2906', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-29 20:07:50');
+INSERT INTO `log` VALUES ('2907', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-04-29 20:08:49');
+INSERT INTO `log` VALUES ('2908', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-29 20:11:12');
+INSERT INTO `log` VALUES ('2909', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 20:14:11');
+INSERT INTO `log` VALUES ('2910', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 20:16:31');
+INSERT INTO `log` VALUES ('2911', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 20:17:57');
+INSERT INTO `log` VALUES ('2912', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-29 20:35:56');
+INSERT INTO `log` VALUES ('2913', 'root', 'ServerInfoServiceImpl', 'update', '1', '0:0:0:0:0:0:0:1', '2015-04-29 20:38:41');
+INSERT INTO `log` VALUES ('2914', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-04-29 20:42:49');
+INSERT INTO `log` VALUES ('2915', 'root', 'ServerInfoServiceImpl', 'update', '1', '0:0:0:0:0:0:0:1', '2015-04-29 20:47:02');
+INSERT INTO `log` VALUES ('2916', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-04-29 20:48:30');
+INSERT INTO `log` VALUES ('2917', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-04-29 20:49:37');
+INSERT INTO `log` VALUES ('2918', 'root', 'ServerInfoServiceImpl', 'update', '1', '0:0:0:0:0:0:0:1', '2015-04-29 20:52:39');
+INSERT INTO `log` VALUES ('2919', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 20:54:16');
+INSERT INTO `log` VALUES ('2920', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-29 20:57:18');
+INSERT INTO `log` VALUES ('2921', 'root', 'ServerInfoServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-29 20:58:48');
+INSERT INTO `log` VALUES ('2922', 'root', 'ServerInfoServiceImpl', 'deleteOperator', '1', '0:0:0:0:0:0:0:1', '2015-04-29 21:00:28');
+INSERT INTO `log` VALUES ('2923', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-29 21:04:16');
+INSERT INTO `log` VALUES ('2924', 'root', 'UserLoginServiceImpl', 'add', '6', '0:0:0:0:0:0:0:1', '2015-04-30 09:59:04');
+INSERT INTO `log` VALUES ('2925', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-30 11:33:13');
+INSERT INTO `log` VALUES ('2926', 'root', 'UserLoginServiceImpl', 'add', '7', '0:0:0:0:0:0:0:1', '2015-04-30 11:51:11');
+INSERT INTO `log` VALUES ('2927', 'root', 'UserLoginServiceImpl', 'add', '9', '0:0:0:0:0:0:0:1', '2015-04-30 11:52:40');
+INSERT INTO `log` VALUES ('2928', 'root', 'ResourcesServiceImpl', 'add', '6', '0:0:0:0:0:0:0:1', '2015-04-30 12:15:40');
+INSERT INTO `log` VALUES ('2929', 'root', 'UserLoginServiceImpl', 'add', '11', '0:0:0:0:0:0:0:1', '2015-04-30 14:35:04');
+INSERT INTO `log` VALUES ('2930', 'root', 'ResourcesServiceImpl', 'addRoleRes', '166', '0:0:0:0:0:0:0:1', '2015-04-30 14:42:50');
+INSERT INTO `log` VALUES ('2931', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 14:43:28');
+INSERT INTO `log` VALUES ('2932', 'root', 'ResourcesServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-30 14:48:01');
+INSERT INTO `log` VALUES ('2933', 'root', 'ResourcesServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-30 14:51:13');
+INSERT INTO `log` VALUES ('2934', 'root', 'ResourcesServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-30 14:56:56');
+INSERT INTO `log` VALUES ('2935', 'root', 'ResourcesServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-30 14:59:44');
+INSERT INTO `log` VALUES ('2936', 'root', 'ResourcesServiceImpl', 'add', '35', '0:0:0:0:0:0:0:1', '2015-04-30 15:03:37');
+INSERT INTO `log` VALUES ('2937', 'root', 'ResourcesServiceImpl', 'add', '12', '0:0:0:0:0:0:0:1', '2015-04-30 15:05:54');
+INSERT INTO `log` VALUES ('2938', 'root', 'ResourcesServiceImpl', 'add', '16', '0:0:0:0:0:0:0:1', '2015-04-30 15:07:09');
+INSERT INTO `log` VALUES ('2939', 'root', 'UserLoginServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-30 15:44:18');
+INSERT INTO `log` VALUES ('2940', 'root', 'ResourcesServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-30 15:46:53');
+INSERT INTO `log` VALUES ('2941', 'root', 'DicTypeServiceImpl', 'update', '5', '0:0:0:0:0:0:0:1', '2015-04-30 15:47:47');
+INSERT INTO `log` VALUES ('2942', 'root', 'ResourcesServiceImpl', 'addRoleRes', '50', '0:0:0:0:0:0:0:1', '2015-04-30 15:49:33');
+INSERT INTO `log` VALUES ('2943', 'root', 'ResourcesServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-30 15:51:06');
+INSERT INTO `log` VALUES ('2944', 'root', 'ResourcesServiceImpl', 'update', '1', '0:0:0:0:0:0:0:1', '2015-04-30 15:51:45');
+INSERT INTO `log` VALUES ('2945', 'root', 'ResourcesServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 15:52:39');
+INSERT INTO `log` VALUES ('2946', 'root', 'ResourcesServiceImpl', 'update', '1', '0:0:0:0:0:0:0:1', '2015-04-30 15:53:01');
+INSERT INTO `log` VALUES ('2947', 'root', 'UserLoginServiceImpl', 'add', '11', '0:0:0:0:0:0:0:1', '2015-04-30 17:22:56');
+INSERT INTO `log` VALUES ('2948', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 17:27:52');
+INSERT INTO `log` VALUES ('2949', 'root', 'UserLoginServiceImpl', 'add', '18', '0:0:0:0:0:0:0:1', '2015-04-30 18:18:24');
+INSERT INTO `log` VALUES ('2950', 'root', 'ResourceServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-04-30 18:30:32');
+INSERT INTO `log` VALUES ('2951', 'root', 'ResourceServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-04-30 18:32:26');
+INSERT INTO `log` VALUES ('2952', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 18:35:00');
+INSERT INTO `log` VALUES ('2953', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 18:39:06');
+INSERT INTO `log` VALUES ('2954', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 18:39:24');
+INSERT INTO `log` VALUES ('2955', 'root', 'ResourceServiceImpl', 'addRoleRes', '126', '0:0:0:0:0:0:0:1', '2015-04-30 18:39:54');
+INSERT INTO `log` VALUES ('2956', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 18:40:09');
+INSERT INTO `log` VALUES ('2957', 'root', 'ResourceServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-04-30 18:40:19');
+INSERT INTO `log` VALUES ('2958', 'root', 'ResourceServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-30 18:40:36');
+INSERT INTO `log` VALUES ('2959', 'root', 'ResourceServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-30 18:41:00');
+INSERT INTO `log` VALUES ('2960', 'root', 'ResourceServiceImpl', 'update', '7', '0:0:0:0:0:0:0:1', '2015-04-30 18:41:15');
+INSERT INTO `log` VALUES ('2961', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-04-30 18:41:24');
+INSERT INTO `log` VALUES ('2962', 'root', 'ResourceServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-04-30 18:41:36');
+INSERT INTO `log` VALUES ('2963', 'root', 'ResourceServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-04-30 18:49:22');
+INSERT INTO `log` VALUES ('2964', 'root', 'ResourceServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-30 18:55:05');
+INSERT INTO `log` VALUES ('2965', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-04-30 19:56:43');
+INSERT INTO `log` VALUES ('2966', 'root', 'UserLoginServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-04-30 20:25:52');
+INSERT INTO `log` VALUES ('2967', 'root', 'UserLoginServiceImpl', 'add', '2', '0:0:0:0:0:0:0:1', '2015-04-30 21:29:02');
+INSERT INTO `log` VALUES ('2968', 'root', 'UserLoginServiceImpl', 'add', '68', '0:0:0:0:0:0:0:1', '2015-05-03 17:43:49');
+INSERT INTO `log` VALUES ('2969', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-05-03 17:44:21');
+INSERT INTO `log` VALUES ('2970', 'root', 'ResourceServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-05-03 17:44:48');
+INSERT INTO `log` VALUES ('2971', 'root', 'UserLoginServiceImpl', 'add', '3', '0:0:0:0:0:0:0:1', '2015-05-03 17:46:07');
+INSERT INTO `log` VALUES ('2972', 'root', 'UserLoginServiceImpl', 'add', '20', '0:0:0:0:0:0:0:1', '2015-05-03 18:05:45');
+INSERT INTO `log` VALUES ('2973', 'root', 'UserLoginServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-05-03 18:07:36');
+INSERT INTO `log` VALUES ('2974', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-05-03 18:22:32');
+INSERT INTO `log` VALUES ('2975', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-05-03 18:29:56');
+INSERT INTO `log` VALUES ('2976', 'root', 'UserLoginServiceImpl', 'add', '6', '0:0:0:0:0:0:0:1', '2015-05-03 18:36:10');
+INSERT INTO `log` VALUES ('2977', 'root', 'UserLoginServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-05-03 18:57:41');
+INSERT INTO `log` VALUES ('2978', 'root', 'UserLoginServiceImpl', 'add', '49', '0:0:0:0:0:0:0:1', '2015-05-04 09:51:47');
+INSERT INTO `log` VALUES ('2979', 'root', 'UserLoginServiceImpl', 'add', '4', '0:0:0:0:0:0:0:1', '2015-05-04 10:40:42');
+INSERT INTO `log` VALUES ('2980', 'root', 'UserLoginServiceImpl', 'add', '5', '0:0:0:0:0:0:0:1', '2015-05-04 11:04:48');
+INSERT INTO `log` VALUES ('2981', 'root', 'UserLoginServiceImpl', 'add', '9', '0:0:0:0:0:0:0:1', '2015-05-04 13:48:44');
+INSERT INTO `log` VALUES ('2982', 'root', 'ServerInfoServiceImpl', 'update', '7', '0:0:0:0:0:0:0:1', '2015-05-04 13:50:06');
+INSERT INTO `log` VALUES ('2983', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-05-04 13:50:17');
+INSERT INTO `log` VALUES ('2984', 'root', 'UserLoginServiceImpl', 'add', '14', '0:0:0:0:0:0:0:1', '2015-05-04 14:07:20');
+INSERT INTO `log` VALUES ('2985', 'root', 'UserLoginServiceImpl', 'add', '29', '0:0:0:0:0:0:0:1', '2015-05-04 14:26:59');
+INSERT INTO `log` VALUES ('2986', 'root', 'ServerInfoServiceImpl', 'update', '7', '0:0:0:0:0:0:0:1', '2015-05-04 14:30:27');
+INSERT INTO `log` VALUES ('2987', 'root', 'ServerInfoServiceImpl', 'update', '7', '0:0:0:0:0:0:0:1', '2015-05-04 14:31:41');
+INSERT INTO `log` VALUES ('2988', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-05-04 14:33:15');
+INSERT INTO `log` VALUES ('2989', 'root', 'ServerInfoServiceImpl', 'update', '5', '0:0:0:0:0:0:0:1', '2015-05-04 14:33:43');
+INSERT INTO `log` VALUES ('2990', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-05-04 14:34:08');
+INSERT INTO `log` VALUES ('2991', 'root', 'ServerInfoServiceImpl', 'update', '6', '0:0:0:0:0:0:0:1', '2015-05-04 14:34:09');
+INSERT INTO `log` VALUES ('2992', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-05-04 14:34:33');
+INSERT INTO `log` VALUES ('2993', 'root', 'ServerInfoServiceImpl', 'update', '1', '0:0:0:0:0:0:0:1', '2015-05-04 14:34:53');
+INSERT INTO `log` VALUES ('2994', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-05-04 14:35:10');
+INSERT INTO `log` VALUES ('2995', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-05-04 14:35:25');
+INSERT INTO `log` VALUES ('2996', 'root', 'ServerInfoServiceImpl', 'update', '2', '0:0:0:0:0:0:0:1', '2015-05-04 14:35:50');
+INSERT INTO `log` VALUES ('2997', 'root', 'ServerInfoServiceImpl', 'update', '3', '0:0:0:0:0:0:0:1', '2015-05-04 14:36:07');
+INSERT INTO `log` VALUES ('2998', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-05-04 14:36:28');
+INSERT INTO `log` VALUES ('2999', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-05-04 14:36:49');
+INSERT INTO `log` VALUES ('3000', 'root', 'ServerInfoServiceImpl', 'update', '4', '0:0:0:0:0:0:0:1', '2015-05-04 14:37:09');
+INSERT INTO `log` VALUES ('3001', 'root', 'UserLoginServiceImpl', 'add', '13', '0:0:0:0:0:0:0:1', '2015-05-04 15:17:35');
 
 -- ----------------------------
--- Table structure for resources
+-- Table structure for operator
 -- ----------------------------
-DROP TABLE IF EXISTS `resources`;
-CREATE TABLE `resources` (
+DROP TABLE IF EXISTS `operator`;
+CREATE TABLE `operator` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) COLLATE utf8_bin DEFAULT NULL COMMENT '运营商名称',
+  `area` varchar(10) COLLATE utf8_bin DEFAULT NULL COMMENT '国家或地区',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='运营商信息表';
+
+-- ----------------------------
+-- Records of operator
+-- ----------------------------
+INSERT INTO `operator` VALUES ('1', '测试运营2', '中国');
+INSERT INTO `operator` VALUES ('2', '台湾', '台湾');
+
+-- ----------------------------
+-- Table structure for resource
+-- ----------------------------
+DROP TABLE IF EXISTS `resource`;
+CREATE TABLE `resource` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL COMMENT '资源名',
   `parentId` int(11) DEFAULT NULL COMMENT '资源父节点ID',
   `resKey` varchar(50) DEFAULT NULL COMMENT '资源KEY',
-  `type` varchar(40) DEFAULT NULL COMMENT '资源类型：0目录，1菜单，2按扭',
+  `type` varchar(40) DEFAULT NULL COMMENT '资源类型参考dic表：1目录，2菜单，3按扭',
   `resUrl` varchar(200) DEFAULT NULL COMMENT '访问的相对URL地址',
-  `level` int(11) DEFAULT NULL COMMENT '级别，菜单的顺序',
+  `level` int(11) DEFAULT '0' COMMENT '级别，菜单的顺序',
   `description` varchar(200) DEFAULT NULL COMMENT '说明',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='访问资源表';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COMMENT='访问资源表';
 
 -- ----------------------------
--- Records of resources
+-- Records of resource
 -- ----------------------------
-INSERT INTO `resources` VALUES ('1', '系统基础管理', '0', 'system', '0', 'system', '0', '系统基础管理');
-INSERT INTO `resources` VALUES ('2', '账号管理', '1', 'account', '1', '/background/account/list.html', '1', '账号管理');
-INSERT INTO `resources` VALUES ('3', '角色管理', '1', 'role', '1', '/background/role/list.html', '5', '角色管理');
-INSERT INTO `resources` VALUES ('4', '菜单管理', '1', 'resources', '1', '/background/resources/list.html', '10', '菜单查询');
-INSERT INTO `resources` VALUES ('5', '新增账号', '2', 'account_add', '2', '/background/account/addUI.html', '2', '新增账号');
-INSERT INTO `resources` VALUES ('6', '修改账号', '2', 'account_edit', '2', '/background/account/editUI.html', '3', '修改账号');
-INSERT INTO `resources` VALUES ('7', '删除账号', '2', 'account_delete', '2', '/background/account/deleteById.html', '4', '删除账号');
-INSERT INTO `resources` VALUES ('8', '新增角色', '3', 'role_add', '2', '/background/role/addUI.html', '6', '部门/科组的新增');
-INSERT INTO `resources` VALUES ('9', '修改角色', '3', 'role_edit', '2', '/background/role/editUI.html', '7', '部门/科组的修改');
-INSERT INTO `resources` VALUES ('10', '删除角色', '3', 'role_delete', '2', '/background/role/delete.html', '8', '部门/科组的删除');
-INSERT INTO `resources` VALUES ('11', '角色授权', '3', 'role_perss', '2', '/background/menu/permissions.html', '9', '菜单授权');
-INSERT INTO `resources` VALUES ('12', '数据字典管理', '0', 'dic_manager', '0', 'dic_manager', '22', '数据字典管理');
-INSERT INTO `resources` VALUES ('13', '字典类型', '12', 'dic_type', '1', '/background/dicType/list.html', '26', '字典类型');
-INSERT INTO `resources` VALUES ('14', '字典维护', '12', 'dic', '1', '/background/dic/list.html', '23', '字典维护');
-INSERT INTO `resources` VALUES ('16', '修改字典', '14', 'dic_edit', '2', '/background/dic/editUI.html', '24', '修改字典');
-INSERT INTO `resources` VALUES ('17', '删除字典', '14', 'dic_delete', '2', '/background/dic/delete.html', '25', '删除字典');
-INSERT INTO `resources` VALUES ('18', '新增字典类型', '13', 'dicType_add', '2', '/background/dicType/addUI.html', '27', '新增字典类型');
-INSERT INTO `resources` VALUES ('19', '修改字典类型', '13', 'dicType_edit', '2', '/background/dicType/editUI.html', '28', '修改字典类型');
-INSERT INTO `resources` VALUES ('20', '删除字典类型', '13', 'dicType_delete', '2', '/background/dicType/delete.html', '29', '删除字典类型');
-INSERT INTO `resources` VALUES ('31', '服务器配置管理', '0', 'server', '0', 'server', '14', '服务器配置管理');
-INSERT INTO `resources` VALUES ('32', '预警设置', '31', 'ser_warn', '1', '/background/serverInfo/forecast.html', '15', '预警设置');
-INSERT INTO `resources` VALUES ('33', '状态列表', '31', 'ser_list', '1', '/background/serverInfo/list.html', '16', '状态列表');
-INSERT INTO `resources` VALUES ('34', '服务器状态', '31', 'ser_statu', '1', '/background/serverInfo/show.html', '17', '服务器状态');
-INSERT INTO `resources` VALUES ('35', '登陆信息管理', '0', 'login', '0', 'login', '18', '登陆信息管理');
-INSERT INTO `resources` VALUES ('36', '用户登录记录', '35', 'log_list', '1', '/background/userLoginList/query.html', '19', '用户登录记录');
-INSERT INTO `resources` VALUES ('37', '操作日志管理', '0', 'log', '0', 'log', '20', '操作日志管理');
-INSERT INTO `resources` VALUES ('38', '日志查询', '37', 'log', '1', '/background/log/list.html', '21', '日志查询');
-INSERT INTO `resources` VALUES ('39', '新增菜单资源', '4', 'resources_add', '2', '/background/resources/addUI.html', '11', '新增菜单资源');
-INSERT INTO `resources` VALUES ('40', '修改菜单资源', '4', 'resources_edit', '2', '/background/resources/editUI.html', '12', '修改菜单资源');
-INSERT INTO `resources` VALUES ('41', '删除菜单资源', '4', 'resources_delete', '2', '/background/resources/delete.html', '13', '删除菜单资源');
+INSERT INTO `resource` VALUES ('1', '系统基础管理', '0', 'system', '1', '', '0', '系统基础管理');
+INSERT INTO `resource` VALUES ('2', '账号管理', '1', 'account', '2', '/background/account/list.html', '1', '账号管理');
+INSERT INTO `resource` VALUES ('3', '角色管理', '1', 'role', '2', '/background/role/list.html', '5', '角色管理');
+INSERT INTO `resource` VALUES ('4', '菜单管理', '1', 'resources', '2', '/background/resource/list.html', '10', '菜单查询');
+INSERT INTO `resource` VALUES ('5', '新增账号', '2', 'account_add', '3', '/background/account/addUI.html', '2', '新增账号');
+INSERT INTO `resource` VALUES ('6', '修改账号', '2', 'account_edit', '3', '/background/account/editUI.html', '3', '修改账号');
+INSERT INTO `resource` VALUES ('7', '删除账号', '2', 'account_delete', '3', '/background/account/deleteById.html', '4', '删除账号');
+INSERT INTO `resource` VALUES ('8', '新增角色', '3', 'role_add', '3', '/background/role/addUI.html', '0', '帐号下角色新增');
+INSERT INTO `resource` VALUES ('9', '修改角色', '3', 'role_edit', '3', '/background/role/editUI.html', '0', '帐号下角色修改');
+INSERT INTO `resource` VALUES ('10', '删除角色', '3', 'role_delete', '3', '/background/role/delete.html', '0', '帐号下角色删除');
+INSERT INTO `resource` VALUES ('11', '角色授权', '3', 'role_perss', '3', '/background/menu/permissions.html', '9', '菜单授权');
+INSERT INTO `resource` VALUES ('12', '数据字典管理', '0', 'dic_manager', '1', '', '0', '数据字典管理');
+INSERT INTO `resource` VALUES ('13', '字典类型', '12', 'dic_type', '2', '/background/dicType/list.html', '26', '字典类型');
+INSERT INTO `resource` VALUES ('14', '字典维护', '12', 'dic', '2', '/background/dic/list.html', '23', '字典维护');
+INSERT INTO `resource` VALUES ('16', '修改字典', '14', 'dic_edit', '3', '/background/dic/editUI.html', '24', '修改字典');
+INSERT INTO `resource` VALUES ('17', '删除字典', '14', 'dic_delete', '3', '/background/dic/delete.html', '25', '删除字典');
+INSERT INTO `resource` VALUES ('18', '新增字典类型', '13', 'dicType_add', '3', '/background/dicType/addUI.html', '27', '新增字典类型');
+INSERT INTO `resource` VALUES ('19', '修改字典类型', '13', 'dicType_edit', '3', '/background/dicType/editUI.html', '28', '修改字典类型');
+INSERT INTO `resource` VALUES ('20', '删除字典类型', '13', 'dicType_delete', '3', '/background/dicType/delete.html', '29', '删除字典类型');
+INSERT INTO `resource` VALUES ('31', '服务器配置管理', '0', 'server', '1', '', '0', '服务器配置管理');
+INSERT INTO `resource` VALUES ('32', '预警设置', '31', 'ser_warn', '2', '/background/server/forecast.html', '0', '预警设置');
+INSERT INTO `resource` VALUES ('33', '状态列表', '31', 'ser_list', '2', '/background/server/list.html', '0', '状态列表');
+INSERT INTO `resource` VALUES ('34', '服务器状态', '31', 'ser_statu', '2', '/background/server/show.html', '0', '服务器状态');
+INSERT INTO `resource` VALUES ('35', '登陆信息管理', '0', 'login', '1', '', '0', '登陆信息管理');
+INSERT INTO `resource` VALUES ('36', '登录记录', '35', 'log_list', '2', '/background/userLoginList/query.html', '19', '用户登录记录');
+INSERT INTO `resource` VALUES ('37', '操作日志管理', '0', 'log', '1', '', '0', '操作日志管理');
+INSERT INTO `resource` VALUES ('38', '日志查询', '37', 'log', '2', '/background/log/list.html', '21', '日志查询');
+INSERT INTO `resource` VALUES ('39', '新增菜单', '4', 'resources_add', '3', '/background/resource/addUI.html', '11', '新增菜单资源');
+INSERT INTO `resource` VALUES ('40', '修改菜单', '4', 'resources_edit', '3', '/background/resource/editUI.html', '12', '修改菜单资源');
+INSERT INTO `resource` VALUES ('41', '删除菜单', '4', 'resources_delete', '3', '/background/resource/delete.html', '13', '删除菜单资源');
+INSERT INTO `resource` VALUES ('42', '运营服务器', '31', 'operator', '2', '/background/operator/list.html', '0', '运营商管理');
+INSERT INTO `resource` VALUES ('43', '用户留存统计', '0', 'user_retention_online', '1', '', '0', '用户在线数据、留存统计');
+INSERT INTO `resource` VALUES ('44', '当前在线', '43', 'current_online', '2', '/online/current.html', '0', '当前玩家在线情况');
+INSERT INTO `resource` VALUES ('45', '历史在线', '43', 'history_online', '2', '/online/history.html', '0', '历史在线查询');
+INSERT INTO `resource` VALUES ('46', '平均在线', '43', 'online_average', '2', '/online/average.html', '0', '平均在线统计查询');
+INSERT INTO `resource` VALUES ('47', '用户付费统计', '0', 'pay_statistics', '1', '', '0', '充值、付费统计');
+INSERT INTO `resource` VALUES ('48', '充值数据', '47', 'recharge_statistics', '3', '/consume/payList.html', null, '充值数据统计');
+INSERT INTO `resource` VALUES ('49', '活跃付费', '47', 'active_pay', '3', '/consume/active_pay.html', null, '活跃付费统计');
+INSERT INTO `resource` VALUES ('50', '首次付费', '47', 'first_pay', '3', '/consume/first_pay.html', null, '首次付费统计');
+INSERT INTO `resource` VALUES ('51', '注册用户', '43', 'register_user', '2', '/retention/register.html', '0', '注册用户留存统计');
+INSERT INTO `resource` VALUES ('52', '活跃用户', '43', 'active_user', '2', '/retention/active_user.html', '0', '活跃用户留存统计');
+INSERT INTO `resource` VALUES ('53', '游戏运营报告', '0', 'operator_report', '1', '', '0', '日报');
+INSERT INTO `resource` VALUES ('54', '运营日报', '53', 'day_report', '2', '/report/day.html', '0', '日报');
 
 -- ----------------------------
 -- Table structure for res_roles
@@ -1554,6 +1744,17 @@ INSERT INTO `res_roles` VALUES ('1', '38');
 INSERT INTO `res_roles` VALUES ('1', '39');
 INSERT INTO `res_roles` VALUES ('1', '40');
 INSERT INTO `res_roles` VALUES ('1', '41');
+INSERT INTO `res_roles` VALUES ('1', '42');
+INSERT INTO `res_roles` VALUES ('1', '43');
+INSERT INTO `res_roles` VALUES ('1', '44');
+INSERT INTO `res_roles` VALUES ('1', '45');
+INSERT INTO `res_roles` VALUES ('1', '46');
+INSERT INTO `res_roles` VALUES ('1', '47');
+INSERT INTO `res_roles` VALUES ('1', '48');
+INSERT INTO `res_roles` VALUES ('1', '49');
+INSERT INTO `res_roles` VALUES ('1', '50');
+INSERT INTO `res_roles` VALUES ('1', '51');
+INSERT INTO `res_roles` VALUES ('1', '52');
 
 -- ----------------------------
 -- Table structure for role
@@ -1581,6 +1782,11 @@ INSERT INTO `role` VALUES ('3', '1', '一般用户', 'simple', '普通角色');
 DROP TABLE IF EXISTS `server_info`;
 CREATE TABLE `server_info` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL COMMENT '服务器名称',
+  `ip` varchar(15) DEFAULT '' COMMENT '访问IP',
+  `port` int(11) DEFAULT '0' COMMENT '访问端口',
+  `visitKey` varchar(255) DEFAULT NULL COMMENT '访问KEY',
+  `operatorId` int(11) DEFAULT '0' COMMENT '所属运营商ID',
   `cpuUsage` varchar(255) DEFAULT NULL COMMENT 'cpu使用率',
   `setCpuUsage` varchar(255) DEFAULT NULL COMMENT '预设cpu使用率',
   `jvmUsage` varchar(255) DEFAULT NULL COMMENT '当前使用Jvm使用率',
@@ -1591,285 +1797,338 @@ CREATE TABLE `server_info` (
   `operTime` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
   `mark` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='服务器信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COMMENT='服务器信息表';
 
 -- ----------------------------
 -- Records of server_info
 -- ----------------------------
-INSERT INTO `server_info` VALUES ('10', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('11', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('12', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('13', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('14', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('15', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('16', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('17', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('18', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('19', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('21', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('31', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('41', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
-INSERT INTO `server_info` VALUES ('51', '90.8', '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2013-12-30 16:04:32', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('10', '英雄3服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '75740970@qq.com', '2015-05-04 14:30:27', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('11', '英雄4服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:31:41', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('12', '台湾1服', '127.0.0.1', '9946', '', '2', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:33:15', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('13', '台湾2服', '127.0.0.1', '9946', '', '2', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:33:43', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('14', '台湾3服', '127.0.0.1', '9946', '', '2', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:34:08', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('15', '英雄5服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:34:33', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('16', '英雄6服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:34:53', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('17', '英雄7服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:35:10', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('18', '英雄8服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:35:25', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('19', '英雄9服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:35:50', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('21', '英雄10服', '127.0.0.1', '9946', '', '1', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:36:07', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('31', '台湾4服', '127.0.0.1', '9946', '', '2', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:36:28', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('41', '台湾5服', '127.0.0.1', '9946', '', '2', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:36:49', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('51', '台湾6服', '127.0.0.1', '9946', '', '2', null, '90', '70.0', '90', '82.0', '90', '421828229@qq.com', '2015-05-04 14:37:09', '<font color=\'red\'>CPU当前：90.8%,超出预设值  90%<br></font>');
+INSERT INTO `server_info` VALUES ('52', '英雄1服', '10.0.0.223', '9946', '', '1', null, '0', null, '0', null, '0', '75740970@qq.com', '2015-05-04 13:50:06', '');
+INSERT INTO `server_info` VALUES ('53', '英雄2服', '127.0.0.1', '9946', '', '1', null, '0', null, '0', null, '0', '75740970@qq.com', '2015-05-04 13:50:17', '');
 
 -- ----------------------------
--- Table structure for userloginlist
+-- Table structure for user_login
 -- ----------------------------
-DROP TABLE IF EXISTS `userloginlist`;
-CREATE TABLE `userloginlist` (
+DROP TABLE IF EXISTS `user_login`;
+CREATE TABLE `user_login` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
   `userName` varchar(20) DEFAULT NULL,
   `loginTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `loginIP` varchar(40) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_userloginlist` (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=298 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of userloginlist
+-- Records of user_login
 -- ----------------------------
-INSERT INTO `userloginlist` VALUES ('1', '1', 'root', '2014-05-23 16:26:05', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('2', '1', 'root', '2014-05-23 16:51:27', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('3', '1', 'root', '2014-05-23 17:29:26', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('4', '1', 'root', '2014-05-24 23:24:19', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('5', '1', 'root', '2014-05-25 01:26:48', '115.231.107.51');
-INSERT INTO `userloginlist` VALUES ('6', '1', 'root', '2014-05-25 09:35:24', '112.90.231.38');
-INSERT INTO `userloginlist` VALUES ('7', '1', 'root', '2014-05-25 10:17:13', '58.253.216.230');
-INSERT INTO `userloginlist` VALUES ('8', '1', 'root', '2014-05-25 23:15:03', '112.90.231.36');
-INSERT INTO `userloginlist` VALUES ('9', '1', 'root', '2014-05-25 23:15:57', '112.94.196.150');
-INSERT INTO `userloginlist` VALUES ('10', '1', 'root', '2014-05-26 08:55:30', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('11', '1', 'root', '2014-05-26 13:11:51', '125.46.146.58');
-INSERT INTO `userloginlist` VALUES ('12', '1', 'root', '2014-05-26 14:11:30', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('13', '1', 'root', '2014-05-27 15:47:48', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('14', '1', 'root', '2014-05-28 09:37:34', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('15', '1', 'root', '2014-05-29 18:40:32', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('16', '1', 'root', '2014-05-30 10:55:34', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('17', '1', 'root', '2014-05-30 11:26:57', '183.233.189.114');
-INSERT INTO `userloginlist` VALUES ('18', '1', 'root', '2014-06-08 09:51:30', '58.254.168.29');
-INSERT INTO `userloginlist` VALUES ('19', '1', 'root', '2014-06-08 10:13:07', '36.251.188.137');
-INSERT INTO `userloginlist` VALUES ('20', '1', 'root', '2014-06-08 11:25:40', '58.254.168.29');
-INSERT INTO `userloginlist` VALUES ('21', '1', 'root', '2014-06-08 13:31:16', '180.169.9.130');
-INSERT INTO `userloginlist` VALUES ('22', '1', 'root', '2014-06-08 13:35:39', '36.251.188.137');
-INSERT INTO `userloginlist` VALUES ('23', '1', 'root', '2014-06-08 13:38:35', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('24', '35', 'lanyuan', '2014-06-08 13:41:39', '116.234.99.133');
-INSERT INTO `userloginlist` VALUES ('25', '1', 'root', '2014-06-08 14:35:39', '60.55.42.44');
-INSERT INTO `userloginlist` VALUES ('26', '1', 'root', '2014-06-08 14:35:42', '218.88.6.114');
-INSERT INTO `userloginlist` VALUES ('27', '1', 'root', '2014-06-08 14:46:33', '58.20.233.115');
-INSERT INTO `userloginlist` VALUES ('28', '1', 'root', '2014-06-08 15:08:13', '58.251.229.52');
-INSERT INTO `userloginlist` VALUES ('29', '1', 'root', '2014-06-08 15:17:02', '221.223.238.232');
-INSERT INTO `userloginlist` VALUES ('30', '1', 'root', '2014-06-08 15:36:04', '58.249.67.196');
-INSERT INTO `userloginlist` VALUES ('31', '1', 'root', '2014-06-08 15:46:58', '59.42.9.212');
-INSERT INTO `userloginlist` VALUES ('32', '1', 'root', '2014-06-08 15:58:13', '221.238.82.210');
-INSERT INTO `userloginlist` VALUES ('33', '1', 'root', '2014-06-08 17:05:34', '58.20.233.115');
-INSERT INTO `userloginlist` VALUES ('34', '1', 'root', '2014-06-08 17:10:59', '222.128.184.174');
-INSERT INTO `userloginlist` VALUES ('35', '1', 'root', '2014-06-08 18:32:20', '114.82.60.227');
-INSERT INTO `userloginlist` VALUES ('36', '1', 'root', '2014-06-08 18:48:58', '58.254.168.29');
-INSERT INTO `userloginlist` VALUES ('37', '1', 'root', '2014-06-08 18:51:57', '58.48.17.219');
-INSERT INTO `userloginlist` VALUES ('38', '35', 'lanyuan', '2014-06-08 19:00:41', '58.20.238.211');
-INSERT INTO `userloginlist` VALUES ('39', '1', 'root', '2014-06-08 19:02:17', '111.204.254.35');
-INSERT INTO `userloginlist` VALUES ('40', '1', 'root', '2014-06-08 19:57:06', '139.206.5.244');
-INSERT INTO `userloginlist` VALUES ('41', '1', 'root', '2014-06-08 20:32:55', '118.249.45.149');
-INSERT INTO `userloginlist` VALUES ('42', '1', 'root', '2014-06-08 20:46:35', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('43', '1', 'root', '2014-06-08 20:47:24', '58.48.17.219');
-INSERT INTO `userloginlist` VALUES ('44', '1', 'root', '2014-06-08 23:33:53', '36.251.188.137');
-INSERT INTO `userloginlist` VALUES ('45', '1', 'root', '2014-06-09 08:39:08', '218.19.190.244');
-INSERT INTO `userloginlist` VALUES ('46', '1', 'root', '2014-06-09 08:55:16', '118.144.130.194');
-INSERT INTO `userloginlist` VALUES ('47', '1', 'root', '2014-06-09 09:23:45', '118.144.130.194');
-INSERT INTO `userloginlist` VALUES ('48', '1', 'root', '2014-06-09 09:25:39', '183.32.167.219');
-INSERT INTO `userloginlist` VALUES ('49', '1', 'root', '2014-06-09 09:27:04', '183.32.167.219');
-INSERT INTO `userloginlist` VALUES ('50', '1', 'root', '2014-06-09 09:56:19', '58.251.146.199');
-INSERT INTO `userloginlist` VALUES ('51', '1', 'root', '2014-06-09 10:16:42', '202.118.67.226');
-INSERT INTO `userloginlist` VALUES ('52', '1', 'root', '2014-06-09 10:51:09', '106.38.250.220');
-INSERT INTO `userloginlist` VALUES ('53', '1', 'root', '2014-06-09 10:51:09', '106.38.250.220');
-INSERT INTO `userloginlist` VALUES ('54', '1', 'root', '2014-06-09 14:21:16', '183.37.220.113');
-INSERT INTO `userloginlist` VALUES ('55', '1', 'root', '2014-06-09 14:24:52', '183.37.220.113');
-INSERT INTO `userloginlist` VALUES ('56', '1', 'root', '2014-06-09 19:34:34', '222.161.208.41');
-INSERT INTO `userloginlist` VALUES ('57', '1', 'root', '2014-06-10 08:04:35', '125.120.230.193');
-INSERT INTO `userloginlist` VALUES ('58', '1', 'root', '2014-06-10 08:11:39', '58.20.49.162');
-INSERT INTO `userloginlist` VALUES ('59', '1', 'root', '2014-06-10 09:02:01', '111.20.101.114');
-INSERT INTO `userloginlist` VALUES ('60', '1', 'root', '2014-06-10 09:16:48', '182.148.112.217');
-INSERT INTO `userloginlist` VALUES ('61', '33', 'admin', '2014-06-10 09:19:53', '182.148.112.217');
-INSERT INTO `userloginlist` VALUES ('62', '1', 'root', '2014-06-10 09:53:19', '222.129.50.16');
-INSERT INTO `userloginlist` VALUES ('63', '1', 'root', '2014-06-10 11:30:45', '123.235.17.134');
-INSERT INTO `userloginlist` VALUES ('64', '1', 'root', '2014-06-10 12:40:59', '112.112.17.170');
-INSERT INTO `userloginlist` VALUES ('65', '1', 'root', '2014-06-10 13:46:59', '101.95.114.210');
-INSERT INTO `userloginlist` VALUES ('66', '33', 'admin', '2014-06-10 14:30:11', '124.207.116.226');
-INSERT INTO `userloginlist` VALUES ('67', '1', 'root', '2014-06-10 14:40:47', '118.186.2.176');
-INSERT INTO `userloginlist` VALUES ('68', '33', 'admin', '2014-06-10 16:18:08', '115.152.68.151');
-INSERT INTO `userloginlist` VALUES ('69', '1', 'root', '2014-06-10 16:36:09', '218.88.110.36');
-INSERT INTO `userloginlist` VALUES ('70', '1', 'root', '2014-06-11 09:34:29', '221.123.160.249');
-INSERT INTO `userloginlist` VALUES ('71', '1', 'root', '2014-06-11 11:04:56', '221.123.160.250');
-INSERT INTO `userloginlist` VALUES ('72', '1', 'root', '2014-06-11 11:34:23', '221.123.160.250');
-INSERT INTO `userloginlist` VALUES ('73', '1', 'root', '2014-06-11 12:13:51', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('74', '1', 'root', '2014-06-11 12:45:55', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('75', '33', 'admin', '2014-06-11 12:54:59', '110.184.139.165');
-INSERT INTO `userloginlist` VALUES ('76', '35', 'lanyuan', '2014-06-11 16:01:58', '202.114.47.61');
-INSERT INTO `userloginlist` VALUES ('77', '1', 'root', '2014-06-11 22:14:45', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('78', '1', 'root', '2014-06-11 22:43:57', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('79', '1', 'root', '2014-06-11 22:43:58', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('80', '1', 'root', '2014-06-12 11:57:58', '222.221.222.219');
-INSERT INTO `userloginlist` VALUES ('81', '33', 'admin', '2014-06-12 17:47:00', '61.183.207.250');
-INSERT INTO `userloginlist` VALUES ('82', '35', 'lanyuan', '2014-06-12 20:09:50', '1.30.213.223');
-INSERT INTO `userloginlist` VALUES ('83', '35', 'lanyuan', '2014-06-12 21:21:08', '1.30.213.223');
-INSERT INTO `userloginlist` VALUES ('84', '1', 'root', '2014-06-12 21:26:16', '183.247.11.167');
-INSERT INTO `userloginlist` VALUES ('85', '35', 'lanyuan', '2014-06-12 22:15:43', '1.30.213.223');
-INSERT INTO `userloginlist` VALUES ('86', '35', 'lanyuan', '2014-06-13 08:26:22', '202.99.241.164');
-INSERT INTO `userloginlist` VALUES ('87', '35', 'lanyuan', '2014-06-13 08:36:45', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('88', '35', 'lanyuan', '2014-06-13 08:41:48', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('89', '35', 'lanyuan', '2014-06-13 08:54:56', '202.99.241.164');
-INSERT INTO `userloginlist` VALUES ('90', '35', 'lanyuan', '2014-06-13 09:42:58', '202.99.241.164');
-INSERT INTO `userloginlist` VALUES ('91', '1', 'root', '2014-06-13 09:49:43', '202.99.241.164');
-INSERT INTO `userloginlist` VALUES ('92', '1', 'root', '2014-06-13 09:51:24', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('93', '1', 'root', '2014-06-13 09:51:49', '202.99.241.163');
-INSERT INTO `userloginlist` VALUES ('94', '1', 'root', '2014-06-13 09:51:57', '202.99.241.165');
-INSERT INTO `userloginlist` VALUES ('95', '1', 'root', '2014-06-13 09:52:47', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('96', '1', 'root', '2014-06-13 10:19:50', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('97', '35', 'lanyuan', '2014-06-13 11:37:21', '222.185.143.75');
-INSERT INTO `userloginlist` VALUES ('98', '1', 'root', '2014-06-13 14:21:18', '203.88.36.67');
-INSERT INTO `userloginlist` VALUES ('99', '1', 'root', '2014-06-13 15:19:09', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('100', '1', 'root', '2014-06-13 15:24:46', '1.28.193.143');
-INSERT INTO `userloginlist` VALUES ('101', '1', 'root', '2014-06-13 15:29:45', '202.99.241.164');
-INSERT INTO `userloginlist` VALUES ('102', '1', 'root', '2014-06-13 15:38:16', '202.99.241.164');
-INSERT INTO `userloginlist` VALUES ('103', '1', 'root', '2014-06-13 15:38:23', '119.40.54.82');
-INSERT INTO `userloginlist` VALUES ('104', '1', 'root', '2014-06-13 15:39:24', '110.184.139.165');
-INSERT INTO `userloginlist` VALUES ('105', '1', 'root', '2014-06-13 15:40:11', '202.118.67.226');
-INSERT INTO `userloginlist` VALUES ('106', '1', 'root', '2014-06-13 15:41:10', '114.242.14.218');
-INSERT INTO `userloginlist` VALUES ('107', '1', 'root', '2014-06-14 12:00:13', '124.160.216.54');
-INSERT INTO `userloginlist` VALUES ('108', '1', 'root', '2014-06-14 21:27:44', '113.103.67.195');
-INSERT INTO `userloginlist` VALUES ('109', '1', 'root', '2014-06-15 08:02:30', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('110', '1', 'root', '2014-06-15 08:02:44', '120.82.94.166');
-INSERT INTO `userloginlist` VALUES ('111', '33', 'admin', '2014-06-15 08:10:23', '111.161.17.65');
-INSERT INTO `userloginlist` VALUES ('112', '1', 'root', '2014-06-15 09:32:35', '123.114.139.185');
-INSERT INTO `userloginlist` VALUES ('113', '1', 'root', '2014-06-15 09:36:26', '123.114.139.185');
-INSERT INTO `userloginlist` VALUES ('114', '1', 'root', '2014-06-16 10:20:08', '218.29.231.254');
-INSERT INTO `userloginlist` VALUES ('115', '1', 'root', '2014-06-16 12:13:26', '211.142.27.46');
-INSERT INTO `userloginlist` VALUES ('116', '1', 'root', '2014-06-16 12:52:29', '183.248.177.87');
-INSERT INTO `userloginlist` VALUES ('117', '1', 'root', '2014-06-16 20:58:55', '183.16.164.175');
-INSERT INTO `userloginlist` VALUES ('118', '1', 'root', '2014-06-16 22:22:06', '110.19.38.104');
-INSERT INTO `userloginlist` VALUES ('119', '33', 'admin', '2014-06-17 08:42:18', '123.116.90.13');
-INSERT INTO `userloginlist` VALUES ('120', '1', 'root', '2014-06-17 08:48:22', '218.19.190.244');
-INSERT INTO `userloginlist` VALUES ('121', '1', 'root', '2014-06-17 08:49:18', '106.120.122.130');
-INSERT INTO `userloginlist` VALUES ('122', '1', 'root', '2014-06-17 09:12:01', '183.248.177.87');
-INSERT INTO `userloginlist` VALUES ('123', '33', 'admin', '2014-06-17 09:21:36', '58.17.241.32');
-INSERT INTO `userloginlist` VALUES ('124', '1', 'root', '2014-06-17 09:26:28', '61.154.14.122');
-INSERT INTO `userloginlist` VALUES ('125', '33', 'admin', '2014-06-17 09:26:58', '101.95.114.210');
-INSERT INTO `userloginlist` VALUES ('126', '33', 'admin', '2014-06-17 09:28:02', '106.37.187.134');
-INSERT INTO `userloginlist` VALUES ('127', '33', 'admin', '2014-06-17 09:28:11', '183.3.209.216');
-INSERT INTO `userloginlist` VALUES ('128', '33', 'admin', '2014-06-17 09:30:03', '183.3.209.216');
-INSERT INTO `userloginlist` VALUES ('129', '1', 'root', '2014-06-17 09:53:19', '61.148.243.148');
-INSERT INTO `userloginlist` VALUES ('130', '1', 'root', '2014-06-17 09:54:40', '61.148.243.148');
-INSERT INTO `userloginlist` VALUES ('131', '1', 'root', '2014-06-17 09:55:32', '61.148.243.148');
-INSERT INTO `userloginlist` VALUES ('132', '1', 'root', '2014-06-17 09:55:32', '61.148.243.148');
-INSERT INTO `userloginlist` VALUES ('133', '1', 'root', '2014-06-17 11:14:22', '221.123.160.250');
-INSERT INTO `userloginlist` VALUES ('134', '1', 'root', '2014-06-17 12:50:55', '211.97.15.158');
-INSERT INTO `userloginlist` VALUES ('135', '1', 'root', '2014-06-17 13:32:41', '210.56.193.18');
-INSERT INTO `userloginlist` VALUES ('136', '1', 'root', '2014-06-17 13:53:19', '183.32.178.216');
-INSERT INTO `userloginlist` VALUES ('137', '1', 'root', '2014-06-17 14:08:58', '203.88.36.67');
-INSERT INTO `userloginlist` VALUES ('138', '1', 'root', '2014-06-17 14:30:18', '118.144.130.194');
-INSERT INTO `userloginlist` VALUES ('139', '1', 'root', '2014-06-17 14:30:18', '118.144.130.194');
-INSERT INTO `userloginlist` VALUES ('140', '1', 'root', '2014-06-19 10:20:07', '202.99.241.161');
-INSERT INTO `userloginlist` VALUES ('141', '1', 'root', '2014-06-19 10:22:55', '113.200.66.114');
-INSERT INTO `userloginlist` VALUES ('142', '1', 'root', '2014-06-20 10:04:36', '218.80.246.2');
-INSERT INTO `userloginlist` VALUES ('143', '1', 'root', '2014-06-20 11:21:37', '218.80.246.2');
-INSERT INTO `userloginlist` VALUES ('144', '1', 'root', '2014-06-20 12:53:53', '218.80.246.2');
-INSERT INTO `userloginlist` VALUES ('145', '1', 'root', '2014-06-20 17:04:42', '221.179.161.83');
-INSERT INTO `userloginlist` VALUES ('146', '1', 'root', '2014-06-20 17:12:48', '58.211.183.162');
-INSERT INTO `userloginlist` VALUES ('147', '1', 'root', '2014-06-21 13:35:57', '59.252.178.4');
-INSERT INTO `userloginlist` VALUES ('148', '1', 'root', '2014-06-22 11:33:47', '124.202.190.87');
-INSERT INTO `userloginlist` VALUES ('149', '1', 'root', '2014-06-22 16:28:39', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('150', '1', 'root', '2014-06-22 16:28:42', '14.150.166.23');
-INSERT INTO `userloginlist` VALUES ('151', '1', 'root', '2014-06-22 16:34:24', '123.122.155.200');
-INSERT INTO `userloginlist` VALUES ('152', '1', 'root', '2014-06-22 16:40:52', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('153', '1', 'root', '2014-06-22 16:45:33', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('154', '1', 'root', '2014-06-22 16:54:56', '183.247.7.189');
-INSERT INTO `userloginlist` VALUES ('155', '1', 'root', '2014-06-22 16:56:57', '183.247.7.189');
-INSERT INTO `userloginlist` VALUES ('156', '35', 'lanyuan', '2014-06-22 16:57:05', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('157', '1', 'root', '2014-06-22 17:05:24', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('158', '1', 'root', '2014-06-22 17:21:32', '118.114.86.146');
-INSERT INTO `userloginlist` VALUES ('159', '1', 'root', '2014-06-22 17:40:28', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('160', '1', 'root', '2014-06-22 17:44:40', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('161', '1', 'root', '2014-06-22 17:47:41', '123.122.155.200');
-INSERT INTO `userloginlist` VALUES ('162', '1', 'root', '2014-06-22 17:47:41', '123.122.155.200');
-INSERT INTO `userloginlist` VALUES ('163', '1', 'root', '2014-06-22 17:47:42', '112.5.237.248');
-INSERT INTO `userloginlist` VALUES ('164', '1', 'root', '2014-07-14 13:48:51', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('165', '1', 'root', '2014-07-14 14:13:59', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('166', '1', 'root', '2014-07-14 14:21:47', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('167', '1', 'root', '2014-07-15 18:28:52', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('168', '1', 'root', '2014-07-26 11:24:18', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('169', '1', 'root', '2014-07-26 11:42:18', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('170', '1', 'root', '2014-07-26 11:48:37', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('171', '1', 'root', '2014-07-26 11:55:36', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('172', '1', 'root', '2014-07-26 12:04:00', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('173', '1', 'root', '2014-07-26 12:04:38', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('174', '1', 'root', '2014-07-26 12:15:39', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('175', '1', 'root', '2014-07-26 14:27:30', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('176', '1', 'root', '2014-07-27 20:50:39', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('177', '1', 'root', '2014-10-21 10:24:05', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('178', '1', 'root', '2014-10-21 10:33:13', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('179', '1', 'root', '2014-10-21 10:38:56', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('180', '1', 'root', '2014-10-21 16:11:31', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('181', '1', 'root', '2014-10-21 18:01:58', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('182', '1', 'root', '2014-10-29 14:33:16', null);
-INSERT INTO `userloginlist` VALUES ('183', '1', 'root', '2014-10-29 20:12:08', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('184', '1', 'root', '2014-10-29 20:15:42', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('185', '1', 'root', '2014-10-29 20:17:58', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('186', '33', '00', '2014-10-29 20:19:54', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('187', '1', 'root', '2014-10-30 09:51:27', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('188', '33', '00', '2014-10-30 09:52:06', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('189', '33', '00', '2014-10-30 10:14:52', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('190', '33', '00', '2014-10-30 10:15:30', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('191', '33', '00', '2014-10-30 10:20:23', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('192', '33', '00', '2014-10-30 10:24:50', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('193', '33', '00', '2014-10-30 10:39:17', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('194', '33', '00', '2014-10-30 11:06:11', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('195', '33', '00', '2014-10-30 11:12:55', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('196', '33', '00', '2014-10-30 16:39:11', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('197', '33', '00', '2014-10-30 18:57:50', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('198', '1', 'root', '2014-11-12 09:45:36', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('199', '1', 'root', '2014-11-12 09:57:57', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('200', '1', 'root', '2014-11-12 11:22:00', '127.0.0.1');
-INSERT INTO `userloginlist` VALUES ('201', '1', 'root', '2014-11-12 12:24:31', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('202', '1', 'root', '2014-11-12 12:26:49', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('203', '1', 'root', '2014-11-12 12:28:33', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('204', '1', 'root', '2014-11-12 12:32:02', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('205', '1', 'root', '2014-11-17 11:08:30', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('206', '1', 'root', '2015-04-22 11:00:46', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('207', '1', 'root', '2015-04-22 11:40:34', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('208', '1', 'root', '2015-04-22 15:07:49', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('209', '1', 'root', '2015-04-22 16:33:50', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('210', '1', 'root', '2015-04-22 17:16:41', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('211', '1', 'root', '2015-04-22 17:21:46', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('212', '1', 'root', '2015-04-22 17:38:59', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('213', '1', 'root', '2015-04-22 17:41:15', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('214', '1', 'root', '2015-04-22 20:11:20', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('215', '1', 'root', '2015-04-22 21:27:28', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('216', '1', 'root', '2015-04-22 21:27:47', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('217', '1', 'root', '2015-04-22 21:46:54', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('218', '1', 'root', '2015-04-23 10:05:20', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('219', '1', 'root', '2015-04-23 10:08:08', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('220', '1', 'root', '2015-04-23 11:11:11', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('221', '1', 'root', '2015-04-23 12:58:35', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('222', '1', 'root', '2015-04-23 13:41:37', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('223', '34', 'test', '2015-04-23 14:06:29', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('224', '1', 'root', '2015-04-23 14:07:17', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('225', '1', 'root', '2015-04-23 14:38:17', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('226', '1', 'root', '2015-04-23 15:50:41', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('227', '1', 'root', '2015-04-23 16:05:01', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('228', '1', 'root', '2015-04-23 16:05:01', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('229', '1', 'root', '2015-04-23 16:39:24', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('230', '1', 'root', '2015-04-23 17:34:29', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('231', '1', 'root', '2015-04-23 18:35:42', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('232', '1', 'root', '2015-04-23 20:06:25', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('233', '34', 'test', '2015-04-23 20:08:44', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('234', '1', 'root', '2015-04-23 20:55:00', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('235', '1', 'root', '2015-04-24 10:32:45', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('236', '1', 'root', '2015-04-24 14:38:05', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('237', '1', 'root', '2015-04-24 17:34:04', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('238', '1', 'root', '2015-04-24 17:48:21', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('239', '1', 'root', '2015-04-24 18:48:41', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('240', '1', 'root', '2015-04-25 09:30:14', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('241', '1', 'root', '2015-04-25 10:57:01', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('242', '1', 'root', '2015-04-25 12:26:24', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('243', '1', 'root', '2015-04-25 14:40:31', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('244', '1', 'root', '2015-04-25 18:01:03', '0:0:0:0:0:0:0:1');
-INSERT INTO `userloginlist` VALUES ('245', '1', 'root', '2015-04-25 18:46:33', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('1', '1', 'root', '2014-05-23 16:26:05', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('2', '1', 'root', '2014-05-23 16:51:27', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('3', '1', 'root', '2014-05-23 17:29:26', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('4', '1', 'root', '2014-05-24 23:24:19', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('5', '1', 'root', '2014-05-25 01:26:48', '115.231.107.51');
+INSERT INTO `user_login` VALUES ('6', '1', 'root', '2014-05-25 09:35:24', '112.90.231.38');
+INSERT INTO `user_login` VALUES ('7', '1', 'root', '2014-05-25 10:17:13', '58.253.216.230');
+INSERT INTO `user_login` VALUES ('8', '1', 'root', '2014-05-25 23:15:03', '112.90.231.36');
+INSERT INTO `user_login` VALUES ('9', '1', 'root', '2014-05-25 23:15:57', '112.94.196.150');
+INSERT INTO `user_login` VALUES ('10', '1', 'root', '2014-05-26 08:55:30', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('11', '1', 'root', '2014-05-26 13:11:51', '125.46.146.58');
+INSERT INTO `user_login` VALUES ('12', '1', 'root', '2014-05-26 14:11:30', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('13', '1', 'root', '2014-05-27 15:47:48', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('14', '1', 'root', '2014-05-28 09:37:34', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('15', '1', 'root', '2014-05-29 18:40:32', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('16', '1', 'root', '2014-05-30 10:55:34', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('17', '1', 'root', '2014-05-30 11:26:57', '183.233.189.114');
+INSERT INTO `user_login` VALUES ('18', '1', 'root', '2014-06-08 09:51:30', '58.254.168.29');
+INSERT INTO `user_login` VALUES ('19', '1', 'root', '2014-06-08 10:13:07', '36.251.188.137');
+INSERT INTO `user_login` VALUES ('20', '1', 'root', '2014-06-08 11:25:40', '58.254.168.29');
+INSERT INTO `user_login` VALUES ('21', '1', 'root', '2014-06-08 13:31:16', '180.169.9.130');
+INSERT INTO `user_login` VALUES ('22', '1', 'root', '2014-06-08 13:35:39', '36.251.188.137');
+INSERT INTO `user_login` VALUES ('23', '1', 'root', '2014-06-08 13:38:35', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('24', '35', 'lanyuan', '2014-06-08 13:41:39', '116.234.99.133');
+INSERT INTO `user_login` VALUES ('25', '1', 'root', '2014-06-08 14:35:39', '60.55.42.44');
+INSERT INTO `user_login` VALUES ('26', '1', 'root', '2014-06-08 14:35:42', '218.88.6.114');
+INSERT INTO `user_login` VALUES ('27', '1', 'root', '2014-06-08 14:46:33', '58.20.233.115');
+INSERT INTO `user_login` VALUES ('28', '1', 'root', '2014-06-08 15:08:13', '58.251.229.52');
+INSERT INTO `user_login` VALUES ('29', '1', 'root', '2014-06-08 15:17:02', '221.223.238.232');
+INSERT INTO `user_login` VALUES ('30', '1', 'root', '2014-06-08 15:36:04', '58.249.67.196');
+INSERT INTO `user_login` VALUES ('31', '1', 'root', '2014-06-08 15:46:58', '59.42.9.212');
+INSERT INTO `user_login` VALUES ('32', '1', 'root', '2014-06-08 15:58:13', '221.238.82.210');
+INSERT INTO `user_login` VALUES ('33', '1', 'root', '2014-06-08 17:05:34', '58.20.233.115');
+INSERT INTO `user_login` VALUES ('34', '1', 'root', '2014-06-08 17:10:59', '222.128.184.174');
+INSERT INTO `user_login` VALUES ('35', '1', 'root', '2014-06-08 18:32:20', '114.82.60.227');
+INSERT INTO `user_login` VALUES ('36', '1', 'root', '2014-06-08 18:48:58', '58.254.168.29');
+INSERT INTO `user_login` VALUES ('37', '1', 'root', '2014-06-08 18:51:57', '58.48.17.219');
+INSERT INTO `user_login` VALUES ('38', '35', 'lanyuan', '2014-06-08 19:00:41', '58.20.238.211');
+INSERT INTO `user_login` VALUES ('39', '1', 'root', '2014-06-08 19:02:17', '111.204.254.35');
+INSERT INTO `user_login` VALUES ('40', '1', 'root', '2014-06-08 19:57:06', '139.206.5.244');
+INSERT INTO `user_login` VALUES ('41', '1', 'root', '2014-06-08 20:32:55', '118.249.45.149');
+INSERT INTO `user_login` VALUES ('42', '1', 'root', '2014-06-08 20:46:35', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('43', '1', 'root', '2014-06-08 20:47:24', '58.48.17.219');
+INSERT INTO `user_login` VALUES ('44', '1', 'root', '2014-06-08 23:33:53', '36.251.188.137');
+INSERT INTO `user_login` VALUES ('45', '1', 'root', '2014-06-09 08:39:08', '218.19.190.244');
+INSERT INTO `user_login` VALUES ('46', '1', 'root', '2014-06-09 08:55:16', '118.144.130.194');
+INSERT INTO `user_login` VALUES ('47', '1', 'root', '2014-06-09 09:23:45', '118.144.130.194');
+INSERT INTO `user_login` VALUES ('48', '1', 'root', '2014-06-09 09:25:39', '183.32.167.219');
+INSERT INTO `user_login` VALUES ('49', '1', 'root', '2014-06-09 09:27:04', '183.32.167.219');
+INSERT INTO `user_login` VALUES ('50', '1', 'root', '2014-06-09 09:56:19', '58.251.146.199');
+INSERT INTO `user_login` VALUES ('51', '1', 'root', '2014-06-09 10:16:42', '202.118.67.226');
+INSERT INTO `user_login` VALUES ('52', '1', 'root', '2014-06-09 10:51:09', '106.38.250.220');
+INSERT INTO `user_login` VALUES ('53', '1', 'root', '2014-06-09 10:51:09', '106.38.250.220');
+INSERT INTO `user_login` VALUES ('54', '1', 'root', '2014-06-09 14:21:16', '183.37.220.113');
+INSERT INTO `user_login` VALUES ('55', '1', 'root', '2014-06-09 14:24:52', '183.37.220.113');
+INSERT INTO `user_login` VALUES ('56', '1', 'root', '2014-06-09 19:34:34', '222.161.208.41');
+INSERT INTO `user_login` VALUES ('57', '1', 'root', '2014-06-10 08:04:35', '125.120.230.193');
+INSERT INTO `user_login` VALUES ('58', '1', 'root', '2014-06-10 08:11:39', '58.20.49.162');
+INSERT INTO `user_login` VALUES ('59', '1', 'root', '2014-06-10 09:02:01', '111.20.101.114');
+INSERT INTO `user_login` VALUES ('60', '1', 'root', '2014-06-10 09:16:48', '182.148.112.217');
+INSERT INTO `user_login` VALUES ('61', '33', 'admin', '2014-06-10 09:19:53', '182.148.112.217');
+INSERT INTO `user_login` VALUES ('62', '1', 'root', '2014-06-10 09:53:19', '222.129.50.16');
+INSERT INTO `user_login` VALUES ('63', '1', 'root', '2014-06-10 11:30:45', '123.235.17.134');
+INSERT INTO `user_login` VALUES ('64', '1', 'root', '2014-06-10 12:40:59', '112.112.17.170');
+INSERT INTO `user_login` VALUES ('65', '1', 'root', '2014-06-10 13:46:59', '101.95.114.210');
+INSERT INTO `user_login` VALUES ('66', '33', 'admin', '2014-06-10 14:30:11', '124.207.116.226');
+INSERT INTO `user_login` VALUES ('67', '1', 'root', '2014-06-10 14:40:47', '118.186.2.176');
+INSERT INTO `user_login` VALUES ('68', '33', 'admin', '2014-06-10 16:18:08', '115.152.68.151');
+INSERT INTO `user_login` VALUES ('69', '1', 'root', '2014-06-10 16:36:09', '218.88.110.36');
+INSERT INTO `user_login` VALUES ('70', '1', 'root', '2014-06-11 09:34:29', '221.123.160.249');
+INSERT INTO `user_login` VALUES ('71', '1', 'root', '2014-06-11 11:04:56', '221.123.160.250');
+INSERT INTO `user_login` VALUES ('72', '1', 'root', '2014-06-11 11:34:23', '221.123.160.250');
+INSERT INTO `user_login` VALUES ('73', '1', 'root', '2014-06-11 12:13:51', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('74', '1', 'root', '2014-06-11 12:45:55', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('75', '33', 'admin', '2014-06-11 12:54:59', '110.184.139.165');
+INSERT INTO `user_login` VALUES ('76', '35', 'lanyuan', '2014-06-11 16:01:58', '202.114.47.61');
+INSERT INTO `user_login` VALUES ('77', '1', 'root', '2014-06-11 22:14:45', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('78', '1', 'root', '2014-06-11 22:43:57', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('79', '1', 'root', '2014-06-11 22:43:58', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('80', '1', 'root', '2014-06-12 11:57:58', '222.221.222.219');
+INSERT INTO `user_login` VALUES ('81', '33', 'admin', '2014-06-12 17:47:00', '61.183.207.250');
+INSERT INTO `user_login` VALUES ('82', '35', 'lanyuan', '2014-06-12 20:09:50', '1.30.213.223');
+INSERT INTO `user_login` VALUES ('83', '35', 'lanyuan', '2014-06-12 21:21:08', '1.30.213.223');
+INSERT INTO `user_login` VALUES ('84', '1', 'root', '2014-06-12 21:26:16', '183.247.11.167');
+INSERT INTO `user_login` VALUES ('85', '35', 'lanyuan', '2014-06-12 22:15:43', '1.30.213.223');
+INSERT INTO `user_login` VALUES ('86', '35', 'lanyuan', '2014-06-13 08:26:22', '202.99.241.164');
+INSERT INTO `user_login` VALUES ('87', '35', 'lanyuan', '2014-06-13 08:36:45', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('88', '35', 'lanyuan', '2014-06-13 08:41:48', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('89', '35', 'lanyuan', '2014-06-13 08:54:56', '202.99.241.164');
+INSERT INTO `user_login` VALUES ('90', '35', 'lanyuan', '2014-06-13 09:42:58', '202.99.241.164');
+INSERT INTO `user_login` VALUES ('91', '1', 'root', '2014-06-13 09:49:43', '202.99.241.164');
+INSERT INTO `user_login` VALUES ('92', '1', 'root', '2014-06-13 09:51:24', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('93', '1', 'root', '2014-06-13 09:51:49', '202.99.241.163');
+INSERT INTO `user_login` VALUES ('94', '1', 'root', '2014-06-13 09:51:57', '202.99.241.165');
+INSERT INTO `user_login` VALUES ('95', '1', 'root', '2014-06-13 09:52:47', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('96', '1', 'root', '2014-06-13 10:19:50', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('97', '35', 'lanyuan', '2014-06-13 11:37:21', '222.185.143.75');
+INSERT INTO `user_login` VALUES ('98', '1', 'root', '2014-06-13 14:21:18', '203.88.36.67');
+INSERT INTO `user_login` VALUES ('99', '1', 'root', '2014-06-13 15:19:09', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('100', '1', 'root', '2014-06-13 15:24:46', '1.28.193.143');
+INSERT INTO `user_login` VALUES ('101', '1', 'root', '2014-06-13 15:29:45', '202.99.241.164');
+INSERT INTO `user_login` VALUES ('102', '1', 'root', '2014-06-13 15:38:16', '202.99.241.164');
+INSERT INTO `user_login` VALUES ('103', '1', 'root', '2014-06-13 15:38:23', '119.40.54.82');
+INSERT INTO `user_login` VALUES ('104', '1', 'root', '2014-06-13 15:39:24', '110.184.139.165');
+INSERT INTO `user_login` VALUES ('105', '1', 'root', '2014-06-13 15:40:11', '202.118.67.226');
+INSERT INTO `user_login` VALUES ('106', '1', 'root', '2014-06-13 15:41:10', '114.242.14.218');
+INSERT INTO `user_login` VALUES ('107', '1', 'root', '2014-06-14 12:00:13', '124.160.216.54');
+INSERT INTO `user_login` VALUES ('108', '1', 'root', '2014-06-14 21:27:44', '113.103.67.195');
+INSERT INTO `user_login` VALUES ('109', '1', 'root', '2014-06-15 08:02:30', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('110', '1', 'root', '2014-06-15 08:02:44', '120.82.94.166');
+INSERT INTO `user_login` VALUES ('111', '33', 'admin', '2014-06-15 08:10:23', '111.161.17.65');
+INSERT INTO `user_login` VALUES ('112', '1', 'root', '2014-06-15 09:32:35', '123.114.139.185');
+INSERT INTO `user_login` VALUES ('113', '1', 'root', '2014-06-15 09:36:26', '123.114.139.185');
+INSERT INTO `user_login` VALUES ('114', '1', 'root', '2014-06-16 10:20:08', '218.29.231.254');
+INSERT INTO `user_login` VALUES ('115', '1', 'root', '2014-06-16 12:13:26', '211.142.27.46');
+INSERT INTO `user_login` VALUES ('116', '1', 'root', '2014-06-16 12:52:29', '183.248.177.87');
+INSERT INTO `user_login` VALUES ('117', '1', 'root', '2014-06-16 20:58:55', '183.16.164.175');
+INSERT INTO `user_login` VALUES ('118', '1', 'root', '2014-06-16 22:22:06', '110.19.38.104');
+INSERT INTO `user_login` VALUES ('119', '33', 'admin', '2014-06-17 08:42:18', '123.116.90.13');
+INSERT INTO `user_login` VALUES ('120', '1', 'root', '2014-06-17 08:48:22', '218.19.190.244');
+INSERT INTO `user_login` VALUES ('121', '1', 'root', '2014-06-17 08:49:18', '106.120.122.130');
+INSERT INTO `user_login` VALUES ('122', '1', 'root', '2014-06-17 09:12:01', '183.248.177.87');
+INSERT INTO `user_login` VALUES ('123', '33', 'admin', '2014-06-17 09:21:36', '58.17.241.32');
+INSERT INTO `user_login` VALUES ('124', '1', 'root', '2014-06-17 09:26:28', '61.154.14.122');
+INSERT INTO `user_login` VALUES ('125', '33', 'admin', '2014-06-17 09:26:58', '101.95.114.210');
+INSERT INTO `user_login` VALUES ('126', '33', 'admin', '2014-06-17 09:28:02', '106.37.187.134');
+INSERT INTO `user_login` VALUES ('127', '33', 'admin', '2014-06-17 09:28:11', '183.3.209.216');
+INSERT INTO `user_login` VALUES ('128', '33', 'admin', '2014-06-17 09:30:03', '183.3.209.216');
+INSERT INTO `user_login` VALUES ('129', '1', 'root', '2014-06-17 09:53:19', '61.148.243.148');
+INSERT INTO `user_login` VALUES ('130', '1', 'root', '2014-06-17 09:54:40', '61.148.243.148');
+INSERT INTO `user_login` VALUES ('131', '1', 'root', '2014-06-17 09:55:32', '61.148.243.148');
+INSERT INTO `user_login` VALUES ('132', '1', 'root', '2014-06-17 09:55:32', '61.148.243.148');
+INSERT INTO `user_login` VALUES ('133', '1', 'root', '2014-06-17 11:14:22', '221.123.160.250');
+INSERT INTO `user_login` VALUES ('134', '1', 'root', '2014-06-17 12:50:55', '211.97.15.158');
+INSERT INTO `user_login` VALUES ('135', '1', 'root', '2014-06-17 13:32:41', '210.56.193.18');
+INSERT INTO `user_login` VALUES ('136', '1', 'root', '2014-06-17 13:53:19', '183.32.178.216');
+INSERT INTO `user_login` VALUES ('137', '1', 'root', '2014-06-17 14:08:58', '203.88.36.67');
+INSERT INTO `user_login` VALUES ('138', '1', 'root', '2014-06-17 14:30:18', '118.144.130.194');
+INSERT INTO `user_login` VALUES ('139', '1', 'root', '2014-06-17 14:30:18', '118.144.130.194');
+INSERT INTO `user_login` VALUES ('140', '1', 'root', '2014-06-19 10:20:07', '202.99.241.161');
+INSERT INTO `user_login` VALUES ('141', '1', 'root', '2014-06-19 10:22:55', '113.200.66.114');
+INSERT INTO `user_login` VALUES ('142', '1', 'root', '2014-06-20 10:04:36', '218.80.246.2');
+INSERT INTO `user_login` VALUES ('143', '1', 'root', '2014-06-20 11:21:37', '218.80.246.2');
+INSERT INTO `user_login` VALUES ('144', '1', 'root', '2014-06-20 12:53:53', '218.80.246.2');
+INSERT INTO `user_login` VALUES ('145', '1', 'root', '2014-06-20 17:04:42', '221.179.161.83');
+INSERT INTO `user_login` VALUES ('146', '1', 'root', '2014-06-20 17:12:48', '58.211.183.162');
+INSERT INTO `user_login` VALUES ('147', '1', 'root', '2014-06-21 13:35:57', '59.252.178.4');
+INSERT INTO `user_login` VALUES ('148', '1', 'root', '2014-06-22 11:33:47', '124.202.190.87');
+INSERT INTO `user_login` VALUES ('149', '1', 'root', '2014-06-22 16:28:39', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('150', '1', 'root', '2014-06-22 16:28:42', '14.150.166.23');
+INSERT INTO `user_login` VALUES ('151', '1', 'root', '2014-06-22 16:34:24', '123.122.155.200');
+INSERT INTO `user_login` VALUES ('152', '1', 'root', '2014-06-22 16:40:52', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('153', '1', 'root', '2014-06-22 16:45:33', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('154', '1', 'root', '2014-06-22 16:54:56', '183.247.7.189');
+INSERT INTO `user_login` VALUES ('155', '1', 'root', '2014-06-22 16:56:57', '183.247.7.189');
+INSERT INTO `user_login` VALUES ('156', '35', 'lanyuan', '2014-06-22 16:57:05', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('157', '1', 'root', '2014-06-22 17:05:24', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('158', '1', 'root', '2014-06-22 17:21:32', '118.114.86.146');
+INSERT INTO `user_login` VALUES ('159', '1', 'root', '2014-06-22 17:40:28', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('160', '1', 'root', '2014-06-22 17:44:40', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('161', '1', 'root', '2014-06-22 17:47:41', '123.122.155.200');
+INSERT INTO `user_login` VALUES ('162', '1', 'root', '2014-06-22 17:47:41', '123.122.155.200');
+INSERT INTO `user_login` VALUES ('163', '1', 'root', '2014-06-22 17:47:42', '112.5.237.248');
+INSERT INTO `user_login` VALUES ('164', '1', 'root', '2014-07-14 13:48:51', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('165', '1', 'root', '2014-07-14 14:13:59', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('166', '1', 'root', '2014-07-14 14:21:47', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('167', '1', 'root', '2014-07-15 18:28:52', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('168', '1', 'root', '2014-07-26 11:24:18', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('169', '1', 'root', '2014-07-26 11:42:18', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('170', '1', 'root', '2014-07-26 11:48:37', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('171', '1', 'root', '2014-07-26 11:55:36', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('172', '1', 'root', '2014-07-26 12:04:00', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('173', '1', 'root', '2014-07-26 12:04:38', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('174', '1', 'root', '2014-07-26 12:15:39', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('175', '1', 'root', '2014-07-26 14:27:30', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('176', '1', 'root', '2014-07-27 20:50:39', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('177', '1', 'root', '2014-10-21 10:24:05', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('178', '1', 'root', '2014-10-21 10:33:13', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('179', '1', 'root', '2014-10-21 10:38:56', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('180', '1', 'root', '2014-10-21 16:11:31', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('181', '1', 'root', '2014-10-21 18:01:58', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('182', '1', 'root', '2014-10-29 14:33:16', null);
+INSERT INTO `user_login` VALUES ('183', '1', 'root', '2014-10-29 20:12:08', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('184', '1', 'root', '2014-10-29 20:15:42', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('185', '1', 'root', '2014-10-29 20:17:58', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('186', '33', '00', '2014-10-29 20:19:54', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('187', '1', 'root', '2014-10-30 09:51:27', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('188', '33', '00', '2014-10-30 09:52:06', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('189', '33', '00', '2014-10-30 10:14:52', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('190', '33', '00', '2014-10-30 10:15:30', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('191', '33', '00', '2014-10-30 10:20:23', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('192', '33', '00', '2014-10-30 10:24:50', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('193', '33', '00', '2014-10-30 10:39:17', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('194', '33', '00', '2014-10-30 11:06:11', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('195', '33', '00', '2014-10-30 11:12:55', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('196', '33', '00', '2014-10-30 16:39:11', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('197', '33', '00', '2014-10-30 18:57:50', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('198', '1', 'root', '2014-11-12 09:45:36', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('199', '1', 'root', '2014-11-12 09:57:57', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('200', '1', 'root', '2014-11-12 11:22:00', '127.0.0.1');
+INSERT INTO `user_login` VALUES ('201', '1', 'root', '2014-11-12 12:24:31', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('202', '1', 'root', '2014-11-12 12:26:49', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('203', '1', 'root', '2014-11-12 12:28:33', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('204', '1', 'root', '2014-11-12 12:32:02', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('205', '1', 'root', '2014-11-17 11:08:30', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('206', '1', 'root', '2015-04-22 11:00:46', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('207', '1', 'root', '2015-04-22 11:40:34', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('208', '1', 'root', '2015-04-22 15:07:49', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('209', '1', 'root', '2015-04-22 16:33:50', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('210', '1', 'root', '2015-04-22 17:16:41', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('211', '1', 'root', '2015-04-22 17:21:46', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('212', '1', 'root', '2015-04-22 17:38:59', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('213', '1', 'root', '2015-04-22 17:41:15', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('214', '1', 'root', '2015-04-22 20:11:20', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('215', '1', 'root', '2015-04-22 21:27:28', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('216', '1', 'root', '2015-04-22 21:27:47', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('217', '1', 'root', '2015-04-22 21:46:54', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('218', '1', 'root', '2015-04-23 10:05:20', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('219', '1', 'root', '2015-04-23 10:08:08', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('220', '1', 'root', '2015-04-23 11:11:11', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('221', '1', 'root', '2015-04-23 12:58:35', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('222', '1', 'root', '2015-04-23 13:41:37', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('223', '34', 'test', '2015-04-23 14:06:29', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('224', '1', 'root', '2015-04-23 14:07:17', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('225', '1', 'root', '2015-04-23 14:38:17', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('226', '1', 'root', '2015-04-23 15:50:41', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('227', '1', 'root', '2015-04-23 16:05:01', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('228', '1', 'root', '2015-04-23 16:05:01', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('229', '1', 'root', '2015-04-23 16:39:24', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('230', '1', 'root', '2015-04-23 17:34:29', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('231', '1', 'root', '2015-04-23 18:35:42', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('232', '1', 'root', '2015-04-23 20:06:25', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('233', '34', 'test', '2015-04-23 20:08:44', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('234', '1', 'root', '2015-04-23 20:55:00', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('235', '1', 'root', '2015-04-24 10:32:45', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('236', '1', 'root', '2015-04-24 14:38:05', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('237', '1', 'root', '2015-04-24 17:34:04', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('238', '1', 'root', '2015-04-24 17:48:21', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('239', '1', 'root', '2015-04-24 18:48:41', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('240', '1', 'root', '2015-04-25 09:30:14', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('241', '1', 'root', '2015-04-25 10:57:01', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('242', '1', 'root', '2015-04-25 12:26:24', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('243', '1', 'root', '2015-04-25 14:40:31', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('244', '1', 'root', '2015-04-25 18:01:03', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('245', '1', 'root', '2015-04-25 18:46:33', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('246', '1', 'root', '2015-04-27 11:23:45', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('247', '1', 'root', '2015-04-27 13:46:52', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('248', '1', 'root', '2015-04-27 16:21:36', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('249', '1', 'root', '2015-04-27 18:26:37', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('250', '1', 'root', '2015-04-27 19:51:16', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('251', '1', 'root', '2015-04-27 20:11:32', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('252', '1', 'root', '2015-04-27 20:30:09', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('253', '1', 'root', '2015-04-27 22:04:59', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('254', '1', 'root', '2015-04-28 09:59:36', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('255', '1', 'root', '2015-04-28 12:12:09', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('256', '1', 'root', '2015-04-28 12:17:47', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('257', '1', 'root', '2015-04-28 13:45:00', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('258', '1', 'root', '2015-04-28 13:45:29', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('259', '1', 'root', '2015-04-28 14:15:30', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('260', '1', 'root', '2015-04-28 15:41:15', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('261', '1', 'root', '2015-04-28 16:02:01', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('262', '1', 'root', '2015-04-28 16:16:42', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('263', '1', 'root', '2015-04-28 18:22:00', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('264', '1', 'root', '2015-04-28 19:47:29', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('265', '1', 'root', '2015-04-28 20:34:30', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('266', '1', 'root', '2015-04-28 20:35:32', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('267', '1', 'root', '2015-04-29 09:38:23', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('268', '1', 'root', '2015-04-29 15:11:59', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('269', '1', 'root', '2015-04-29 17:42:51', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('270', '1', 'root', '2015-04-29 17:53:55', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('271', '1', 'root', '2015-04-29 20:07:29', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('272', '1', 'root', '2015-04-30 09:59:04', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('273', '1', 'root', '2015-04-30 11:33:13', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('274', '1', 'root', '2015-04-30 11:51:11', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('275', '1', 'root', '2015-04-30 11:52:40', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('276', '1', 'root', '2015-04-30 14:35:04', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('277', '1', 'root', '2015-04-30 15:44:18', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('278', '1', 'root', '2015-04-30 17:22:56', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('279', '1', 'root', '2015-04-30 18:18:24', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('280', '1', 'root', '2015-04-30 19:56:43', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('281', '1', 'root', '2015-04-30 20:25:52', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('282', '1', 'root', '2015-04-30 21:29:02', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('283', '1', 'root', '2015-05-03 17:43:49', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('284', '1', 'root', '2015-05-03 17:46:07', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('285', '1', 'root', '2015-05-03 18:05:45', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('286', '1', 'root', '2015-05-03 18:07:36', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('287', '1', 'root', '2015-05-03 18:22:32', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('288', '1', 'root', '2015-05-03 18:29:56', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('289', '1', 'root', '2015-05-03 18:36:10', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('290', '1', 'root', '2015-05-03 18:57:41', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('291', '1', 'root', '2015-05-04 09:51:47', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('292', '1', 'root', '2015-05-04 10:40:42', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('293', '1', 'root', '2015-05-04 11:04:48', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('294', '1', 'root', '2015-05-04 13:48:44', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('295', '1', 'root', '2015-05-04 14:07:20', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('296', '1', 'root', '2015-05-04 14:26:59', '0:0:0:0:0:0:0:1');
+INSERT INTO `user_login` VALUES ('297', '1', 'root', '2015-05-04 15:17:35', '0:0:0:0:0:0:0:1');
