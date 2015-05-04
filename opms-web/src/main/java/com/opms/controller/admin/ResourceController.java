@@ -21,6 +21,7 @@ import com.opms.entity.Resource;
 import com.opms.pulgin.mybatis.plugin.PageView;
 import com.opms.service.DicService;
 import com.opms.service.ResourceService;
+import com.opms.util.BeanUtil;
 import com.opms.util.Common;
 import com.opms.util.PropertiesUtils;
 import com.opms.util.TreeObject;
@@ -113,6 +114,7 @@ public class ResourceController extends BaseController {
 			treeObjects.add(t);
 		}
 		List<TreeObject> ns = TreeUtil.getChildResources(treeObjects, 0);
+		BeanUtil.sort(ns, "id", false);
 		map.put("resourceTree", ns);
 		return map;
 	}

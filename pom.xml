@@ -228,7 +228,7 @@
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
+			<version>2.2</version>  
 		</dependency>
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -243,12 +243,12 @@
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
-			<version>20030211.134440</version>
+			<version>1.9.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
-			<version>20040616</version>
+			<version>3.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>

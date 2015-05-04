@@ -184,5 +184,9 @@ public class ServerInfo {
 	public void setOperatorId(int operatorId) {
 		this.operatorId = operatorId;
 	}
-	
+
+	public String getApiUrl(String path) {
+		return "http://" + ip + ":" + port + path;
+	}
+
 }

@@ -80,6 +80,14 @@
 				url : url
 			});
 		});
+		$("#serverAllList").click("click", function() {//绑定按扭
+			var url = "${basePath}/background/server/list.html?operatorId=0";
+			tab.addTabItem({
+				tabid : "serverList",
+				text : "区服列表",
+				url : url
+			});
+		});
 		$("#deleteView")
 				.click(
 						"click",
@@ -141,7 +149,8 @@
 			<a class="btn btn-primary" href="javascript:void(0)" id="add"> <i class="icon-zoom-add icon-white"></i> <span>add</span>
 			</a> <a class="btn btn-info" href="javascript:void(0)" id="editView"> <i class="icon-edit icon-white"></i> Edit
 			</a> <a class="btn btn-danger" href="javascript:void(0)" id="deleteView"> <i class="icon-trash icon-white"></i> Delete
-			</a> <a class="btn btn-large btn-success" href="javascript:void(0)" id="serverList"> 查看区服 </a>
+			</a> <a class="btn btn-large btn-success" href="javascript:void(0)" id="serverList"> 运营商区服
+			</a> <a class="btn btn-primary" href="javascript:void(0)" id="serverAllList"> 查看所有区服 </a>
 		</div>
 		<div id="paging" class="pagclass"></div>
 	</div>

@@ -5,32 +5,53 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<%@ include file="/common/header.jsp"%>
+<script type="text/javascript">
+$(function(){
+	loadOptionBox({
+		    url : "/background/operator/queryAll.html",
+		    boxId : "operator",
+		    optionValue : "id",
+		    optionName : "name"
+	});
+	$("#seach").click("click", function() {//绑定按扭
+			var seachParam = $("#fenye").serializeJson();
+			$("#paging").ligerGrid({
+                columns: [
+                { display: '服务器', name: 'name'},
+                { display: '当前在线人数', name: 'onlineCount', align: 'center',type:'int', totalSummary: {type: 'sum'}}
+                ],   
+                isScroll: false,
+                width: "60%",
+                sortName: "name",  
+                method : "post",
+                url: rootPath + "/online/now.html",
+                parms: seachParam
+            });
+		});
+	$("#operator").change(function(){
+		var id = $("#operator").val();
+		if (id > 0) {
+		    loadOptionBox({
+			    url : "/background/server/serverList.html?operatorId=" + id,
+			    boxId : "server",
+			    optionValue : "id",
+			    optionName : "name"
+			});
+		}
+	});
+});
+
+
+</script>
 <body>
 <div class="divBody">
 		<div class="search">
 			<form name="fenye" id="fenye">
-				名称：<input type="text" name="accountName" value="${param.name}"
-					style="height: 20px" /> <a class="btn btn-primary"
-					href="javascript:void(0)" id="seach"> 查询
-				</a>
+				渠道：<select id="operator" name="operator"><option value="0" selected="selected">----所有----</option></select>
+				  区服：<select id="server" name="server"><option value="0" selected="selected">----所有----</option></select>
+				 <a class="btn btn-primary" href="javascript:void(0)" id="seach"> 查询</a>
 			</form>
-		</div>
-		<div class="topBtn">
-			<a class="btn btn-primary" href="javascript:void(0)" id="add"> <i
-				class="icon-zoom-add icon-white"></i> <span>add</span>
-			</a> <!-- <a class="btn btn-success" href="javascript:void(0)"> <i
-				class="icon-zoom-in icon-white" id="View"></i> View
-			</a> --> <a class="btn btn-info" href="javascript:void(0)" id="editView"> <i
-				class="icon-edit icon-white"></i> Edit
-			</a> <a class="btn btn-danger" href="javascript:void(0)" id="deleteView"> <i
-				class="icon-trash icon-white"></i> Delete
-			</a>
-			<a class="btn btn-large btn-success" href="javascript:void(0)" id="exportExcel">
-				导出excel
-			</a>
-			<a class="btn btn-large btn-success" href="javascript:void(0)" id="perrole">
-				分配角色
-			</a>
 		</div>
 		<div id="paging" class="pagclass"></div>
 	</div>

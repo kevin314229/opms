@@ -78,15 +78,6 @@
 	    addTabEvent(sid, name, url);
 	    return false;
 	});
-	$("#operatorUI").click("click", function() {
-	    parent.$.ligerDialog().open({
-		width : 200,
-		height : 200,
-		url : rootPath + "/background/operator/chooseUI.html",
-		title : "选择运营平台",
-		isHidden : true
-	    });
-	});
     });
 </script>
 <style type="text/css">
@@ -354,72 +345,6 @@
 			<div id="part3" class="leaf">
 				<div class="leaf_body">
 					<div class="skin">
-						<input type="text" id="popTxt" value="选择运营平台"/>
-						<div id="btn1"></div>
-
-						<script type="text/javascript">
-			    $("#btn1").ligerButton({
-				text : '获取值',
-				click : function() {
-				    var value = $.ligerui.get("popTxt").getValue();
-				    alert(value);
-				}
-			    });
-
-			    $("#popTxt").ligerPopupEdit({
-					condition : {
-					    prefixID : 'condtion_',
-					    fields : [ {
-						name : 'CompanyName',
-						type : 'text',
-						label : '公司名'
-					    } ]
-					},
-					grid : getGridOptions(true),
-					valueField : 'Country',
-					textField : 'Country',
-					width : 200
-			    });
-
-			    function getGridOptions(checkbox) {
-				var options = {
-				    columns : [ {
-					display : '顾客',
-					name : 'CustomerID',
-					align : 'left',
-					width : 100,
-					minWidth : 60
-				    }, {
-					display : '公司名',
-					name : 'CompanyName',
-					minWidth : 120,
-					width : 100
-				    }, {
-					display : '联系名',
-					name : 'ContactName',
-					minWidth : 140,
-					width : 100
-				    }, {
-					display : '电话',
-					name : 'Phone',
-					width : 100
-				    }, {
-					display : '城市',
-					name : 'City',
-					width : 100
-				    }, {
-					display : '国家',
-					name : 'Country',
-					width : 100
-				    } ],
-				    switchPageSizeApplyComboBox : false,
-				    data : $.extend({}, CustomersData),
-				    pageSize : 10,
-				    checkbox : checkbox
-				};
-				return options;
-			    }
-			</script>
 					</div>
 				</div>
 			</div>

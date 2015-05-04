@@ -1,6 +1,7 @@
 package com.opms.controller.admin;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -34,9 +35,23 @@ public class ServerInfoController extends BaseController {
 	@ResponseBody
 	@RequestMapping("query")
 	public PageView queryServerInfo(Model model, ServerInfo serverInfo, Integer pageNow, Integer pagesize, @RequestParam(required=false)Integer operatorId) {
-		serverInfo.setOperatorId(operatorId);
-		pageView = serverInfoService.query(getPageView(pageNow, pagesize), serverInfo);
+		if (operatorId != null && operatorId > 0) {
+			serverInfo.setOperatorId(operatorId);
+			pageView = serverInfoService.query(getPageView(pageNow, pagesize), serverInfo);
+		}else {
+			pageView = getPageView(pageNow, pagesize);
+			pageView.setRecords(serverInfoService.queryAll(serverInfo));
+		}
 		return pageView;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@ResponseBody
+	@RequestMapping("serverList")
+	public List<ServerInfo> queryServerInfo(Model model, ServerInfo serverInfo, @RequestParam(required=false)Integer operatorId) {
+		serverInfo.setOperatorId(operatorId);
+		pageView = serverInfoService.query(getPageView(1, 100), serverInfo);
+		return (List<ServerInfo>) pageView.getRecords();
 	}
 	
 	@RequestMapping("list")

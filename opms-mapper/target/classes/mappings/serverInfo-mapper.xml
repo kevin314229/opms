@@ -42,7 +42,7 @@
 	<select id="queryAll" resultType="ServerInfo" parameterType="ServerInfo">
 		select
 		<include refid="selectId" />
-		from server_info  order By operTime desc
+		from server_info
 	</select>
 
 	<!-- 总记录数 -->
